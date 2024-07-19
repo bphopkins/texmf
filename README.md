@@ -1,8 +1,6 @@
 # Global Custom LaTeX Macro Files, *Locally*
 
-This document provides [instructions](#instructions) to change the TEXMFHOME location to the bph-work USB device. These instructions are generalizable to other locations.
-
-It's kind of an annoying setup, but it can be worth it.
+I have decided to share some custom LaTeX macros with the world, as well as some clean [instructions](#instructions) for getting global LaTeX macro files set up locally. I wish something like this existed when I first tried to get it working. It's kind of an annoying setup, but it can be worth it.
 
 
 ### Why would you want to do this?
