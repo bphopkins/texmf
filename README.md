@@ -10,7 +10,7 @@ It's a special kind of problem for people who write in LaTeX, **locally**, and h
 
 For example, I am a logician, and working in LaTeX can be a bit cumbersome when the default names of the symbols I use often have little in common with the meaning they have in my writing. So one redefines the symbols with a bit of flavor: for example, in my case, `\Vdash` gets redefined as `\trues`. Eventually there is a long list of these in the preamble of every document, which has to be copied over into each new document -- so one just offloads it all into a file, for example `logic.sty`. But eventually you have as many different `logic.sty` files as you have documents, each of which has some special command defined in it and only it.
 
-This is where these instructions come in handy: they give you a way to have your custom LaTeX macro files stored in one place, so that you never go to use a command that's only defined in God-knows-which of your documents, for it not to compile.
+This is where these instructions come in handy: they give you a way to have your custom LaTeX macro files stored in one place, so that you never go to use a command that's only defined in God-knows-which of your documents, only for it not to compile.
 
 
 ## Instructions
@@ -39,7 +39,7 @@ This is where these instructions come in handy: they give you a way to have your
     Running this command may take some time! In both Fedora and Ubuntu (Pop) it's at: 
     `/usr/share/texlive/texmf-dist/web2c/texmf.cnf`
     
-    You might rather search for the `texmf.cnf` file, but as I recall not all systems (maybe I have Windows or Mac in mind) do not have the TEXMFHOME location information stored in a file with this name.
+    You might rather search for the `texmf.cnf` file, but as I recall not all systems (maybe I have Windows or Mac in mind) have the TEXMFHOME location information stored in a file with this name.
 
 3. In your preferred editor, search for the line that contains `TEXMFHOME` (circa line 84) and change the default location `~/texmf` to your desired location (you might need to be root):
     - Ubuntu (Pop):  `/media/bph/bph-work/texmf`
@@ -55,3 +55,7 @@ This is where these instructions come in handy: they give you a way to have your
         texhash /run/media/bph/bph-work/texmf
         ```
     This will create a file inside the `texmf` folder called `ls-R` which directs the compiler to your custom macros.
+
+And now you are set!
+
+Just keep in mind that, **every time you update one of your macros, you will need to update the hash!**
