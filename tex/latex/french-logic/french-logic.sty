@@ -1,0 +1,309 @@
+ 
+ 
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{french-logic}[Package for doing logic for Rohan French]
+
+
+
+
+% Generally Useful Packages
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{biblatex}
+\usepackage[english]{babel}
+\RequirePackage{ragged2e}
+\RequirePackage{setspace}
+\RequirePackage{hyperref}
+%\RequirePackage[symbol]{footmisc}
+\RequirePackage{enotez}
+\RequirePackage{graphicx}
+    \graphicspath{ {./images/} }
+\RequirePackage{multicol}
+\RequirePackage{xcolor, soul}
+% Special Environment Packages
+\RequirePackage{enumitem}
+\RequirePackage{mdframed}
+% Math Packages
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
+\RequirePackage{stmaryrd}
+\RequirePackage{mathrsfs}
+\RequirePackage{calc}
+\RequirePackage{trimclip,adjustbox}
+%Logic Packages
+\RequirePackage{ebproof}
+\RequirePackage{tikz} % taken from http://www.actual.world/resources/tex/doc/TikZ.pdf
+    \usetikzlibrary{arrows,calc,patterns,positioning,shapes}
+    %\usetikzlibrary{decorations.pathmorphing}
+    \tikzset{
+    	modal/.style={>=stealth’,shorten >=1pt,shorten <=1pt,auto,node distance=1.5cm,semithick},
+    	world/.style={circle,draw,minimum size=1cm,fill=gray!15},
+    	point/.style={circle,draw,fill=black,inner sep=0.5mm},
+    	reflexive/.style={->,in=120,out=60,loop,looseness=#1},
+    	reflexive/.default={5},
+    	reflexive point/.style={->,in=135,out=45,loop,looseness=#1},
+    	reflexive point/.default={25},
+    	reflexive above/.style={->,loop,in=120,out=60,looseness=#1},
+    	reflexive above/.default={7},
+    	reflexive below/.style={->,loop,in=240,out=300,looseness=#1},
+    	reflexive below/.default={7},
+    	reflexive left/.style={->,loop,in=150,out=210,looseness=#1},
+    	reflexive left/.default={7},
+    	reflexive right/.style={->,loop,in=30,out=330,looseness=#1},
+    	reflexive right/.default={7}
+    }
+\RequirePackage{tikzsymbols}
+
+% amsthm
+\renewcommand\qedsymbol{$\blacksquare$}
+
+% amsmath
+\theoremstyle{definition}
+	\newtheorem{defn}{Definition}[section]
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem*{thms}{Some Theorems}
+	\newtheorem*{rmrk}{Remark}%[section]
+	\newtheorem*{anal}{Analysis}
+	\newtheorem{proposal}{Proposal}
+
+% Misc Preliminary
+\DeclareSymbolFont{stmry}{U}{stmry}{m}{n}
+\DeclareMathSymbol{\Yright}{\mathbin}{stmry}{"07}
+\DeclareMathSymbol{\shortminus}{\mathbin}{AMSa}{"39}
+\newcommand{\dvbar}{{{\mbox{$|\mkern-3.7mu|$}}}}
+\newcommand{\parent}[1]{(#1)}
+
+% Misc Mathematical
+\newcommand{\fn}{{f_{{\mkern-3.6mu\scriptscriptstyle N}}}}
+\newcommand{\fs}{{f_{{\mkern-3mu\scriptscriptstyle S}}}}
+\newcommand{\fr}{{f_{{\mkern-3.6mu\scriptscriptstyle R}}}}
+\newcommand{\fsub}[1]{{f_{{\mkern-3.5mu\scriptscriptstyle #1}}}}
+\newcommand{\fsof}[2]{\fs(#1,#2)}
+\newcommand{\fnof}[1]{\fn(#1)}
+
+% Set Theoretic Notions and Relations
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\oset}[1]{\langle #1 \rangle}
+\newcommand{\inclin}{\sqsubseteq}
+\newcommand{\power}[1]{\mathbb{P}(#1)}
+\renewcommand{\null}{\emptyset}
+\newcommand{\intersect}{\cap}
+\newcommand{\union}{\cup}
+
+% Semantic Notions and Relations
+\newcommand{\val}[1]{v(#1)}
+\newcommand{\vw}[2]{v_{#1}(#2)}
+\newcommand{\Val}[1]{\textnormal{Val}(#1)}
+\newcommand{\true}{\textnormal{T}}
+\newcommand{\false}{\textnormal{F}}
+\newcommand{\ind}{\textnormal{i}}
+\renewcommand{\models}{\vDash}
+\newcommand{\nmodels}{\nvDash}
+\newcommand{\trues}{\Vdash}
+\newcommand{\ntrues}{\nVdash}
+\newcommand{\mmodels}{\M\models}
+\newcommand{\mnmodels}{\M\nmodels}
+\newcommand{\mtruesat}[1]{\M,{#1}\trues}
+\newcommand{\mntruesat}[1]{\M,{#1}\ntrues}
+\newcommand{\truthset}[1]{\dvbar #1\dvbar}
+\newcommand{\truthsetm}[1]{\dvbar #1\dvbar^{\mbox{$\mkern-2mu$\scriptsize$\M$}}}
+\newcommand{\truthsetmsub}[2]{\dvbar #1\dvbar_{\mbox{$\mkern-2mu$\scriptsize$#2$}}^{\mbox{$\mkern-2mu$\scriptsize$\M$}}}
+\newcommand{\truthsetmm}[1]{\dvbar #1\dvbar_{\mbox{$\mkern-2mu$\scriptsize$m$}}^{\mbox{$\mkern-2mu$\scriptsize$\M$}}}
+\newcommand{\defby}{\:=_\textnormal{def}\:}
+\newcommand{\prop}[1]{{p}_{\scriptscriptstyle{#1}}}
+\newcommand{\props}{{\mathcal{P}}}
+
+% Logical Operators and Relations
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\onlyif}{\rightarrow}
+\newcommand{\then}{\rightarrow}
+\renewcommand{\to}{\rightarrow}
+\newcommand{\derives}{\Rightarrow}
+\newcommand{\gives}{\vdash}
+\newcommand{\asserts}{\vdash}
+\newcommand{\proves}{\vdash}
+\newcommand{\seq}{\:\Yright\:}
+\newcommand{\modelsrel}[1]{\models_{\!\mathscr{#1}}}
+\newcommand{\provesrel}[1]{\proves_{\!\mathscr{#1}}}
+
+% Misc Modal Symbols, Operators and Relations
+\newcommand{\nec}{\Box}
+\newcommand{\poss}{{\Diamond}}
+\newcommand{\M}{\mathfrak{M}}
+\newcommand{\F}{\mathfrak{F}}
+\newcommand{\C}{\textbf{C}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\mwrv}{\M=\oset{W,R,V}}
+\newcommand{\mwrp}{\M=\oset{W,R,P}}
+\newcommand{\mwnv}{\M=\oset{W,N,V}}
+\newcommand{\mwnp}{\M=\oset{W,N,P}}
+\newcommand{\bisim}{\leftrightarroweq}
+\newcommand{\Msig}{\M^{{\scriptscriptstyle\Sigma}}}
+\newcommand{\Wsig}{W^{{\scriptscriptstyle\Sigma}}}
+\newcommand{\Rsig}{R^{{\scriptscriptstyle\Sigma}}}
+\newcommand{\Vsig}{V^{{\scriptscriptstyle\Sigma}}}
+\newcommand{\neced}{\nec}
+\newcommand{\unneced}{\nec^{{{\!\:\!\:\!\:\!\shortminus\! 1}}}}
+\newcommand{\possed}{\poss}
+\newcommand{\unpossed}{\poss^{{{\!\shortminus\! 1}}}}
+% Applied Modal Operators (to make these operators bold, add \textbf before the brackets around the operator letters)
+\newcommand{\hitherto}{\mathsf{{H}}}
+\newcommand{\henceforth}{\mathsf{{G}}}
+\newcommand{\was}{\mathsf{{P}}}
+\newcommand{\willbe}{\mathsf{{F}}}
+\newcommand{\precedes}{\prec}
+\newcommand{\knows}[1]{\mathsf{{K}}_{\!\,#1}}
+\newcommand{\know}{\mathsf{{K}}}
+\newcommand{\cknows}[1]{\mathsf{{k}}_{\!\,#1}}
+\newcommand{\cknow}{\mathsf{{k}}}
+\newcommand{\believes}[1]{\mathsf{{B}}_{\!\,#1}}
+\newcommand{\believe}{\mathsf{{B}}}
+\newcommand{\cbelieves}[1]{\mathsf{{b}}_{\!\,#1}}
+\newcommand{\cbelieve}{\mathsf{{b}}}
+
+
+
+% Deontic Operators
+\newcommand{\ought}{\mathsf{{O}}}
+\newcommand{\may}{\mathsf{{P}}}
+\newcommand{\obligatory}{\mathsf{{O}}}
+\newcommand{\permissible}{\mathsf{{P}}}
+\newcommand{\forbidden}{\mathsf{{F}}}
+\newcommand{\gratuitous}{\mathsf{{G}}}
+\newcommand{\optional}{\mathsf{{T}}}
+\newcommand{\necessitates}{\Rightarrow}
+\newcommand{\triggers}{\Rightarrow}
+\newcommand{\cought}[2]{\ought(#1/#2)}
+\newcommand{\better}[2]{\mathsf{{B}}(#1/#2)}
+\newcommand{\samevas}[2]{\mathsf{{S}}(#1/#2)}
+\newcommand{\condop}[1]{{
+		{\mbox{$\mkern3.5mu$}}
+		{\mathrel{\raisebox{.87pt}{\scalebox{1}{\rotatebox[origin=c]{0}{$\shortmid$}}}}}
+		{\mbox{$\mkern-5mu$}}
+		{\mathrel{\raisebox{.45pt}{\scalebox{1}{\rotatebox[origin=c]{90}{$\shortmid\mkern-1.1mu\shortmid$}}}}}
+		{\mbox{$\mkern-2.7mu$}}
+		{\mathrel{\raisebox{.5pt}{\scalebox{.75}{\rotatebox[origin=c]{0}{$\mathsf{#1}$}}}}}
+		{\mbox{$\mkern2.75mu$}}
+}}
+\newcommand{\cobs}{{\condop{O}}}
+\newcommand{\cperms}{{\condop{P}}}
+\newcommand{\cbevs}{{\condop{B}}}
+%\newcommand{\cobs}{{\mbox{$\mkern4.3mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\supset$}}}}\mbox{$\mkern-15.25mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\multimap$}}}}}}\mbox{$\mkern2.25mu$}}}
+%\newcommand{\cobvar}{{{}{\mkern3.3mu{{\mathrel{\raisebox{1.45pt}{\scalebox{.65}{$\bigcirc$}}}}{\mkern-6mu}{{\mathrel{\raisebox{1pt}{\scalebox{.75}{$\Rightarrow$}}}}}}{}\mkern1.85mu}{}}}
+\newcommand{\sphere}{\mathbf{\mathdollar}}
+
+
+
+% STIT
+\usepackage[tracking=smallcaps]{microtype}
+\newcommand{\versal}[1]{{\textls*[-30]{#1}}}
+
+\newcommand{\tree}{\versal{\textit{Tree}}}
+\newcommand{\agent}{\versal{\textit{Agent}}}
+\newcommand{\choice}{\versal{\textit{Choice}}}
+\newcommand{\stitought}{\versal{\textit{Ought}}}
+\newcommand{\stitval}{\versal{\textit{Value}}}
+\newcommand{\choicema}{\versal{\textit{Choice}}_\alpha^m}
+
+\newcommand{\cstit}[2]{[#1\:\versal{\textit{cstit}}\colon #2]}
+\newcommand{\dstit}[2]{[#1\:\versal{\textit{dstit}}\colon #2]}
+\newcommand{\cstito}{\versal{\textit{cstit}}}
+\newcommand{\dstito}{\versal{\textit{dstit}}}
+
+
+
+% Modal Axioms
+
+
+% Modal Derivation Rules
+\newcommand{\krule}{\parent{k}}
+\newcommand{\kax}{\parent{\textsc{k}}}
+\newcommand{\dax}{\parent{\textsc{d}}}
+\newcommand{\tax}{\parent{\textsc{t}}}
+\newcommand{\uax}{\parent{\textsc{u}}}
+\renewcommand{\max}{\parent{\textsc{m}}}
+\newcommand{\cax}{\parent{\textsc{c}}}
+\newcommand{\nax}{\parent{\textsc{n}}}
+\newcommand{\rerule}{\parent{\textsc{re}}}
+\newcommand{\relrule}{\parent{\textsc{re}$_{\textnormal{\tiny L}}$}}
+\newcommand{\rerrule}{\parent{\textsc{re}$_{\textnormal{\tiny R}}$}}
+\newcommand{\porule}{\parent{\textsc{p}$_\ought$}}
+\newcommand{\posrule}{\parent{\textsc{p}$_\ought^\ast$}}
+\newcommand{\drule}{{\parent{\textsc{dual}}}}
+\newcommand{\duax}{{\parent{\textsc{dual}}}}
+\newcommand{\nrule}{{\parent{\textsc{nec}}}}
+\newcommand{\mprule}{{\parent{\textsc{mp}}}}
+\newcommand{\plrule}{{\parent{\textsc{pl}}}}
+\newcommand{\rkrule}{\parent{{\textsc{rk}}}}
+\newcommand{\reprule}{{\parent{\textsc{repl}}}}
+\newcommand{\tautrule}{{\parent{\textsc{taut}}}}
+\newcommand{\subrule}{{\parent{\textsc{sub}}}}
+\newcommand{\rmposs}{{\parent{\textsc{rm}$_\poss$}}}
+\newcommand{\reposs}{\parent{{\textsc{re}}$_\poss$}}
+\newcommand{\rposs}{{\parent{\textsc{r}}$_\poss$}}
+\newcommand{\Trule}{\parent{t}}
+\newcommand{\Tdual}{\parent{t$_\poss$}}
+\newcommand{\dfnec}{\parent{{\textsc{df}}$_\nec$}}
+
+% Modal Systems and Schema
+\newcommand{\K}{\textbf{K}}
+\newcommand{\D}{\textbf{D}}
+\newcommand{\T}{\textbf{T}}
+\newcommand{\B}{\textbf{B}}
+\newcommand{\four}{\textbf{4}}
+\newcommand{\five}{\textbf{5}}
+\newcommand{\KT}{\textbf{KT}}
+\newcommand{\KD}{\textbf{KD}}
+\newcommand{\KB}{\textbf{KB}}
+\newcommand{\Kfour}{\textbf{K4}}
+\newcommand{\Kfive}{\textbf{K5}}
+\newcommand{\KDU}{\textbf{KDU}}
+\newcommand{\E}{\textbf{E}}
+\newcommand{\EM}{\textbf{EM}}
+\newcommand{\EN}{\textbf{EN}}
+\newcommand{\EC}{\textbf{EC}}
+\newcommand{\EMN}{\textbf{EMN}}
+\newcommand{\ECN}{\textbf{ECN}}
+\newcommand{\EMC}{\textbf{EMC}}
+\newcommand{\VW}{\textbf{VW}}
+\newcommand{\COc}{\textnormal{CO$_\textnormal{{\kern-.1em}\scriptsize C}$}}
+\newcommand{\COvf}[1]{\textnormal{CO$_{\textnormal{{\kern-.1em}\scriptsize vF}_{{\kern-.1em}\textnormal{\tiny #1}}}$}}
+\newcommand{\SDL}{\textnormal{SDL}}
+
+
+
+% Proof Stuff
+\renewcommand{\qed}{\hfill$\blacksquare$}
+
+% Misc Other Technical
+\newcommand{\minus}{{\sim}}
+\newcommand{\ent}{{\:\:^\vdash\!\!/\!_\vDash\:}}
+\newcommand{\cn}[1]{\textnormal{Cn}(#1)}
+\newcommand{\prob}[1]{\textbf{P}(#1)}
+\newcommand{\cprob}[2]{\textbf{P}({{#1} \mid {#2}})}
+\newcommand{\cred}[1]{\textbf{C}(#1)}
+\newcommand{\ccred}[2]{\textbf{C}({{#1} \mid {#2}})}
+\newcommand{\theory}[1]{\mathcal{T}_{#1}}
+\newcommand{\topg}{\Uparrow_\textnormal{G}}
+\newcommand{\botg}{\Downarrow_\textnormal{G}}
+\newcommand{\topt}{\Uparrow_\textnormal{A}}
+\newcommand{\bott}{\Downarrow_\textnormal{A}}
+\newcommand{\ax}{\textit{Ax}}
+\renewcommand{\th}{\textit{Th}}
+\newcommand{\natent}{%
+	\mathrel{\text{\clipbox{0pt 0pt {.8\width} 0pt}{$\Vdash$}}\mkern.9mu}\vDash
+}
+\newcommand{\nnatent}{{\natent\!\!\!\!\!\!\!\!\!\; \raisebox{1.25pt}{\rotatebox[origin=c]{-50}{|}}}}
+
+% Misc Nonlogical
+\newcommand{\p}[1]{p.~{#1}}
+\newcommand{\pp}[1]{pp.~{#1}}
+
+
+% Question/Answer Environments
+\newenvironment{question}{}{}
+\newenvironment{answer}{\begin{mdframed}[backgroundcolor=yellow!2,linewidth=1.5pt,roundcorner=8pt,innerleftmargin=12pt,innerrightmargin=12pt,innertopmargin=12pt,innerbottommargin=-2pt,skipabove=15pt,skipbelow=25pt]\begin{spacing}{1.05}\RaggedRight\renewcommand{\thempfootnote}{\fnsymbol{mpfootnote}}}{\end{spacing}\end{mdframed}}
+\newcommand{\abreak}{\\[-10pt]}
