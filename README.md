@@ -1,13 +1,15 @@
 # Global Custom LaTeX Macro Files, *Locally*
 
-I have decided to share some custom LaTeX macros with the world, as well as some clean [instructions](#instructions) for getting global LaTeX macro files set up locally. I wish something like this existed when I first tried to get it working. It's kind of an annoying setup, but it can be worth it.
+I have decided to share some custom LaTeX macros with the world, as well as some clean [instructions](#instructions) for getting global LaTeX macro files set up locally on Unix-like machines.  It's kind of an annoying setup, but it can be worth it.
+
+These days ChatGPT can give you cleaner instructions, and answers to more questions, but when I was figuring this out I could not find simple instructions that worked every time anywhere on the internet.  These have worked for me every time.
 
 
-### Why would you want to do this?
+### Why would you want to make use of these instructions?
 
 It's a special kind of problem for people who write in LaTeX, **locally**, and have very long preambles. 
 
-As of 2024, Overleaf does not support global custom macro files. This is the primary reason why I do not use Overleaf. The secondary reason is that [TeXstudio](https://www.texstudio.org/) is awesome.
+As of 2024, Overleaf does not support global custom macro files. This is the primary reason why I do not use Overleaf. The second reason is that [TeXstudio](https://www.texstudio.org/) is awesome.
 
 For example, I am a logician, and working in LaTeX can be a bit cumbersome when the default names of the symbols I use often have little in common with the meaning they have in my writing. So one redefines the symbols with a bit of flavor: for example, in my case, `\Vdash` gets redefined as `\trues`. Eventually there is a long list of these in the preamble of every document, which has to be copied over into each new document -- so one just offloads it all into a file, for example `logic.sty`. But eventually you have as many different `logic.sty` files as you have documents, each of which has some special command defined in it and only it.
 
@@ -23,18 +25,18 @@ This is where these instructions come in handy: they give you a way to have your
         - For example, if you have two macro files, they might be placed something like this:
             ```
             -texmf
-                -tex
-                    -latex
-                        -logic
-                            logic.sty
-                        -tufte-compact
-                            tufte-compact.cls
-                            tufte-common.def
+             -tex
+	      -latex
+               -logic
+                 logic.sty
+               -tufte-compact
+                 tufte-compact.cls
+                 tufte-common.def
             ```
 
 
 2. Find where your texmf.cnf file is. For example, you might search for "TEXMFHOME" in your filesystem:
-    ```bash
+    ```
     sudo find / -type f -exec grep -H 'TEXMFHOME' {} \;
     ```
     Running this command may take some time! In both Fedora and Ubuntu (Pop) it's at: 
@@ -48,15 +50,19 @@ This is where these instructions come in handy: they give you a way to have your
 
 4. Update hash:
 	- Ubuntu:  
-        ```bash
+        ```
         texhash /media/bph/bph-work/texmf
         ```
 	- Fedora:
-        ```bash
+        ```
         texhash /run/media/bph/bph-work/texmf
         ```
     This will create a file inside the `texmf` folder called `ls-R` which directs the compiler to your custom macros.
 
 And now you are set!
 
-Just keep in mind that, **every time you update one of your macros, you will need to update the hash!**
+### A Little Piece of Advice
+
+I have never gone wrong adhering to the following rule:  **Every time you update one of your macros, update the hash!**
+
+Some say that you only need to update the hash when you modify the structure of the `texmf` directory.  I seem to remember this not working for me sometimes, so I just always go ahead and update the hash.
