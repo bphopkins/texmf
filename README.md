@@ -25,13 +25,13 @@ This is where these instructions come in handy: they give you a way to have your
         - For example, if you have two macro files, they might be placed something like this:
             ```
             -texmf
-             -tex
-	      -latex
-               -logic
-                 logic.sty
-               -tufte-compact
-                 tufte-compact.cls
-                 tufte-common.def
+              -tex
+	            -latex
+                  -logic
+                    logic.sty
+                  -tufte-compact
+                    tufte-compact.cls
+                    tufte-common.def
             ```
 
 
