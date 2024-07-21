@@ -1,29 +1,32 @@
- 
- 
 \NeedsTeXFormat{LaTeX2e}
-
 \ProvidesPackage{french-logic}[Package for doing logic for Rohan French]
 
 
 
+%%% PACKAGES %%%
 
 % Generally Useful Packages
-\RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern}
+\RequirePackage[english]{babel}
 \RequirePackage{biblatex}
-\usepackage[english]{babel}
 \RequirePackage{ragged2e}
 \RequirePackage{setspace}
 \RequirePackage{hyperref}
-%\RequirePackage[symbol]{footmisc}
+\RequirePackage{footmisc}
 \RequirePackage{enotez}
 \RequirePackage{graphicx}
-    \graphicspath{ {./images/} }
+    \graphicspath{{./images/}}
 \RequirePackage{multicol}
 \RequirePackage{xcolor, soul}
+
+
 % Special Environment Packages
 \RequirePackage{enumitem}
 \RequirePackage{mdframed}
+
+
 % Math Packages
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
@@ -33,41 +36,48 @@
 \RequirePackage{mathrsfs}
 \RequirePackage{calc}
 \RequirePackage{trimclip,adjustbox}
-%Logic Packages
+
+
+% Logic Packages
 \RequirePackage{ebproof}
-\RequirePackage{tikz} % taken from http://www.actual.world/resources/tex/doc/TikZ.pdf
+\RequirePackage{tikz} % Settings for possible worlds models, taken from http://www.actual.world/resources/tex/doc/TikZ.pdf
     \usetikzlibrary{arrows,calc,patterns,positioning,shapes}
-    %\usetikzlibrary{decorations.pathmorphing}
     \tikzset{
-    	modal/.style={>=stealth’,shorten >=1pt,shorten <=1pt,auto,node distance=1.5cm,semithick},
-    	world/.style={circle,draw,minimum size=1cm,fill=gray!15},
-    	point/.style={circle,draw,fill=black,inner sep=0.5mm},
-    	reflexive/.style={->,in=120,out=60,loop,looseness=#1},
-    	reflexive/.default={5},
-    	reflexive point/.style={->,in=135,out=45,loop,looseness=#1},
-    	reflexive point/.default={25},
-    	reflexive above/.style={->,loop,in=120,out=60,looseness=#1},
-    	reflexive above/.default={7},
-    	reflexive below/.style={->,loop,in=240,out=300,looseness=#1},
-    	reflexive below/.default={7},
-    	reflexive left/.style={->,loop,in=150,out=210,looseness=#1},
-    	reflexive left/.default={7},
-    	reflexive right/.style={->,loop,in=30,out=330,looseness=#1},
-    	reflexive right/.default={7}
+        modal/.style={>=stealth’,shorten >=1pt,shorten <=1pt,auto,node distance=1.5cm,semithick},
+        world/.style={circle,draw,minimum size=1cm,fill=gray!15},
+        point/.style={circle,draw,fill=black,inner sep=0.5mm},
+        reflexive/.style={->,in=120,out=60,loop,looseness=#1},
+        reflexive/.default={5},
+        reflexive point/.style={->,in=135,out=45,loop,looseness=#1},
+        reflexive point/.default={25},
+        reflexive above/.style={->,loop,in=120,out=60,looseness=#1},
+        reflexive above/.default={7},
+        reflexive below/.style={->,loop,in=240,out=300,looseness=#1},
+        reflexive below/.default={7},
+        reflexive left/.style={->,loop,in=150,out=210,looseness=#1},
+        reflexive left/.default={7},
+        reflexive right/.style={->,loop,in=30,out=330,looseness=#1},
+        reflexive right/.default={7}
     }
 \RequirePackage{tikzsymbols}
+
+
+
+%%% COMMANDS %%%
 
 % amsthm
 \renewcommand\qedsymbol{$\blacksquare$}
 
+
 % amsmath
 \theoremstyle{definition}
-	\newtheorem{defn}{Definition}[section]
-	\newtheorem{thm}{Theorem}[section]
-	\newtheorem*{thms}{Some Theorems}
-	\newtheorem*{rmrk}{Remark}%[section]
-	\newtheorem*{anal}{Analysis}
-	\newtheorem{proposal}{Proposal}
+    \newtheorem{defn}{Definition}[section]
+    \newtheorem{thm}{Theorem}[section]
+    \newtheorem*{thms}{Some Theorems}
+    \newtheorem*{rmrk}{Remark}%[section]
+    \newtheorem*{anal}{Analysis}
+    \newtheorem{proposal}{Proposal}
+
 
 % Misc Preliminary
 \DeclareSymbolFont{stmry}{U}{stmry}{m}{n}
@@ -75,6 +85,7 @@
 \DeclareMathSymbol{\shortminus}{\mathbin}{AMSa}{"39}
 \newcommand{\dvbar}{{{\mbox{$|\mkern-3.7mu|$}}}}
 \newcommand{\parent}[1]{(#1)}
+
 
 % Misc Mathematical
 \newcommand{\fn}{{f_{{\mkern-3.6mu\scriptscriptstyle N}}}}
@@ -84,6 +95,7 @@
 \newcommand{\fsof}[2]{\fs(#1,#2)}
 \newcommand{\fnof}[1]{\fn(#1)}
 
+
 % Set Theoretic Notions and Relations
 \newcommand{\set}[1]{\{#1\}}
 \newcommand{\oset}[1]{\langle #1 \rangle}
@@ -92,6 +104,7 @@
 \renewcommand{\null}{\emptyset}
 \newcommand{\intersect}{\cap}
 \newcommand{\union}{\cup}
+
 
 % Semantic Notions and Relations
 \newcommand{\val}[1]{v(#1)}
@@ -116,6 +129,7 @@
 \newcommand{\prop}[1]{{p}_{\scriptscriptstyle{#1}}}
 \newcommand{\props}{{\mathcal{P}}}
 
+
 % Logical Operators and Relations
 \renewcommand{\iff}{\leftrightarrow}
 \newcommand{\onlyif}{\rightarrow}
@@ -128,6 +142,7 @@
 \newcommand{\seq}{\:\Yright\:}
 \newcommand{\modelsrel}[1]{\models_{\!\mathscr{#1}}}
 \newcommand{\provesrel}[1]{\proves_{\!\mathscr{#1}}}
+
 
 % Misc Modal Symbols, Operators and Relations
 \newcommand{\nec}{\Box}
@@ -149,6 +164,8 @@
 \newcommand{\unneced}{\nec^{{{\!\:\!\:\!\:\!\shortminus\! 1}}}}
 \newcommand{\possed}{\poss}
 \newcommand{\unpossed}{\poss^{{{\!\shortminus\! 1}}}}
+
+
 % Applied Modal Operators (to make these operators bold, add \textbf before the brackets around the operator letters)
 \newcommand{\hitherto}{\mathsf{{H}}}
 \newcommand{\henceforth}{\mathsf{{G}}}
@@ -165,7 +182,6 @@
 \newcommand{\cbelieve}{\mathsf{{b}}}
 
 
-
 % Deontic Operators
 \newcommand{\ought}{\mathsf{{O}}}
 \newcommand{\may}{\mathsf{{P}}}
@@ -180,13 +196,13 @@
 \newcommand{\better}[2]{\mathsf{{B}}(#1/#2)}
 \newcommand{\samevas}[2]{\mathsf{{S}}(#1/#2)}
 \newcommand{\condop}[1]{{
-		{\mbox{$\mkern3.5mu$}}
-		{\mathrel{\raisebox{.87pt}{\scalebox{1}{\rotatebox[origin=c]{0}{$\shortmid$}}}}}
-		{\mbox{$\mkern-5mu$}}
-		{\mathrel{\raisebox{.45pt}{\scalebox{1}{\rotatebox[origin=c]{90}{$\shortmid\mkern-1.1mu\shortmid$}}}}}
-		{\mbox{$\mkern-2.7mu$}}
-		{\mathrel{\raisebox{.5pt}{\scalebox{.75}{\rotatebox[origin=c]{0}{$\mathsf{#1}$}}}}}
-		{\mbox{$\mkern2.75mu$}}
+    {\mbox{$\mkern3.5mu$}}
+    {\mathrel{\raisebox{.87pt}{\scalebox{1}{\rotatebox[origin=c]{0}{$\shortmid$}}}}}
+    {\mbox{$\mkern-5mu$}}
+    {\mathrel{\raisebox{.45pt}{\scalebox{1}{\rotatebox[origin=c]{90}{$\shortmid\mkern-1.1mu\shortmid$}}}}}
+    {\mbox{$\mkern-2.7mu$}}
+    {\mathrel{\raisebox{.5pt}{\scalebox{.75}{\rotatebox[origin=c]{0}{$\mathsf{#1}$}}}}}
+    {\mbox{$\mkern2.75mu$}}
 }}
 \newcommand{\cobs}{{\condop{O}}}
 \newcommand{\cperms}{{\condop{P}}}
@@ -196,10 +212,9 @@
 \newcommand{\sphere}{\mathbf{\mathdollar}}
 
 
-
 % STIT
 \usepackage[tracking=smallcaps]{microtype}
-\newcommand{\versal}[1]{{\textls*[-30]{#1}}}
+	\newcommand{\versal}[1]{{\textls*[-30]{#1}}}
 
 \newcommand{\tree}{\versal{\textit{Tree}}}
 \newcommand{\agent}{\versal{\textit{Agent}}}
@@ -214,12 +229,7 @@
 \newcommand{\dstito}{\versal{\textit{dstit}}}
 
 
-
 % Modal Axioms
-
-
-% Modal Derivation Rules
-\newcommand{\krule}{\parent{k}}
 \newcommand{\kax}{\parent{\textsc{k}}}
 \newcommand{\dax}{\parent{\textsc{d}}}
 \newcommand{\tax}{\parent{\textsc{t}}}
@@ -227,13 +237,17 @@
 \renewcommand{\max}{\parent{\textsc{m}}}
 \newcommand{\cax}{\parent{\textsc{c}}}
 \newcommand{\nax}{\parent{\textsc{n}}}
+\newcommand{\duax}{{\parent{\textsc{dual}}}}
+
+
+% Modal Derivation Rules
+\newcommand{\krule}{\parent{k}}
 \newcommand{\rerule}{\parent{\textsc{re}}}
 \newcommand{\relrule}{\parent{\textsc{re}$_{\textnormal{\tiny L}}$}}
 \newcommand{\rerrule}{\parent{\textsc{re}$_{\textnormal{\tiny R}}$}}
 \newcommand{\porule}{\parent{\textsc{p}$_\ought$}}
 \newcommand{\posrule}{\parent{\textsc{p}$_\ought^\ast$}}
 \newcommand{\drule}{{\parent{\textsc{dual}}}}
-\newcommand{\duax}{{\parent{\textsc{dual}}}}
 \newcommand{\nrule}{{\parent{\textsc{nec}}}}
 \newcommand{\mprule}{{\parent{\textsc{mp}}}}
 \newcommand{\plrule}{{\parent{\textsc{pl}}}}
@@ -247,6 +261,7 @@
 \newcommand{\Trule}{\parent{t}}
 \newcommand{\Tdual}{\parent{t$_\poss$}}
 \newcommand{\dfnec}{\parent{{\textsc{df}}$_\nec$}}
+
 
 % Modal Systems and Schema
 \newcommand{\K}{\textbf{K}}
@@ -274,11 +289,11 @@
 \newcommand{\SDL}{\textnormal{SDL}}
 
 
-
 % Proof Stuff
 \renewcommand{\qed}{\hfill$\blacksquare$}
 
-% Misc Other Technical
+
+% Misc Other Technical (unsorted)
 \newcommand{\minus}{{\sim}}
 \newcommand{\ent}{{\:\:^\vdash\!\!/\!_\vDash\:}}
 \newcommand{\cn}[1]{\textnormal{Cn}(#1)}
@@ -294,16 +309,17 @@
 \newcommand{\ax}{\textit{Ax}}
 \renewcommand{\th}{\textit{Th}}
 \newcommand{\natent}{%
-	\mathrel{\text{\clipbox{0pt 0pt {.8\width} 0pt}{$\Vdash$}}\mkern.9mu}\vDash
+    \mathrel{\text{\clipbox{0pt 0pt {.8\width} 0pt}{$\Vdash$}}\mkern.9mu}\vDash
 }
 \newcommand{\nnatent}{{\natent\!\!\!\!\!\!\!\!\!\; \raisebox{1.25pt}{\rotatebox[origin=c]{-50}{|}}}}
+
 
 % Misc Nonlogical
 \newcommand{\p}[1]{p.~{#1}}
 \newcommand{\pp}[1]{pp.~{#1}}
 
 
-% Question/Answer Environments
+% Question/Answer Environments (unfinished, deprecated)
 \newenvironment{question}{}{}
 \newenvironment{answer}{\begin{mdframed}[backgroundcolor=yellow!2,linewidth=1.5pt,roundcorner=8pt,innerleftmargin=12pt,innerrightmargin=12pt,innertopmargin=12pt,innerbottommargin=-2pt,skipabove=15pt,skipbelow=25pt]\begin{spacing}{1.05}\RaggedRight\renewcommand{\thempfootnote}{\fnsymbol{mpfootnote}}}{\end{spacing}\end{mdframed}}
 \newcommand{\abreak}{\\[-10pt]}
