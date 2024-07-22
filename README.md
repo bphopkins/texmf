@@ -9,7 +9,7 @@ These days ChatGPT can give you cleaner instructions, and answers to more questi
 
 It's a special kind of problem for people who write in LaTeX, **locally**, and have very long preambles. 
 
-As of 2024, Overleaf does not support global custom macro files. This is the primary reason why I do not use Overleaf. The second reason is that [TeXstudio](https://www.texstudio.org/) is awesome.
+As of 2024, Overleaf does not support global custom macro files. This is the primary reason why I do not use Overleaf.
 
 For example, I am a logician, and working in LaTeX can be a bit cumbersome when the default names of the symbols I use often have little in common with the meaning they have in my writing. So one redefines the symbols with a bit of flavor: for example, in my case, `\Vdash` gets redefined as `\trues`. Eventually there is a long list of these in the preamble of every document, which has to be copied over into each new document -- so one just offloads it all into a file, for example `logic.sty`. But eventually you have as many different `logic.sty` files as you have documents, each of which has some special command defined in it and only it.
 
