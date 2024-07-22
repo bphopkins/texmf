@@ -2,7 +2,7 @@
 
 I have decided to share some custom LaTeX macros with the world, as well as some clean [instructions](#instructions) for getting global LaTeX macro files set up locally on Unix-like machines.  It's kind of an annoying setup, but it can be worth it.
 
-These days ChatGPT can give you cleaner instructions, and answers to more questions, but when I was figuring this out I could not find simple instructions that worked every time anywhere on the internet.  These have worked for me every time.
+These days ChatGPT can give you cleaner instructions, and answers to more questions, but when I was figuring this out I could not find **simple** instructions that worked **every time** anywhere.  These have worked for me every time.
 
 
 ### Why would you want to make use of these instructions?
@@ -17,6 +17,8 @@ This is where these instructions come in handy: they give you a way to have your
 
 
 ## Instructions
+
+These instructions are generalizable to different locations -- for example, if you want to make it the location of a cloned GitHub repository. 
 
 1. Create a folder called `texmf` where you would like your custom macro files to be stored (mine is in the home directory of my USB stick). **The location of this folder cannot be changed without having to go through these steps again.** 
     - Inside `texmf`, create a folder called `tex`.
@@ -63,6 +65,4 @@ And now you are set!
 
 ### A Little Piece of Advice
 
-I have never gone wrong adhering to the following rule:  **Every time you update one of your macros, update the hash!**
-
-Some say that you only need to update the hash when you modify the structure of the `texmf` directory.  I seem to remember this not working for me sometimes, so I just always go ahead and update the hash.
+Some say that you only need to update the hash when you modify the structure of the `texmf` directory, and not when you simply update one of the files.  I've had inconsistent results; I seem to remember occasionally updating a file and getting errors until I update the hash.  At any rate, although I do not always adhere to the following rule, you probably can't go wrong adhering to it:  **Every time you update one of your macros, update the hash!**
