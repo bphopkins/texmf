@@ -111,7 +111,6 @@
     pdfstartpage  = 1,
     pdfcreator    = {\LaTeX{} with 'moderncv' package},
     colorlinks=true,
-    allcolors=black,
     %pdfproducer   = {\LaTeX{}},% will/should be set automatically to the correct TeX engine used
     bookmarksopen = true,
     bookmarksdepth= 2,% to show sections and subsections
