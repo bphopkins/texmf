@@ -103,20 +103,22 @@
 \urlstyle{tt}
 \AtEndPreamble{
   \pagenumbering{arabic}% has to be issued before loading hyperref, as to set \thepage and hence to avoid hyperref issuing a warning and setting pdfpagelabels=false
-  \RequirePackage[unicode,pdfnewwindow]{hyperref}% unicode is required for unicode pdf metadata
+  \RequirePackage[unicode]{hyperref}% unicode is required for unicode pdf metadata
   \hypersetup{
     breaklinks,
     pdfborder     = 0 0 0,
     pdfpagemode   = \pdfpagemode,
     pdfstartpage  = 1,
     pdfcreator    = {\LaTeX{} with 'moderncv' package},
-%    pdfproducer   = {\LaTeX{}},% will/should be set automatically to the correct TeX engine used
+    colorlinks=true,
+    allcolors=black,
+    %pdfproducer   = {\LaTeX{}},% will/should be set automatically to the correct TeX engine used
     bookmarksopen = true,
     bookmarksdepth= 2,% to show sections and subsections
     pdfauthor     = {\@firstname{}~\@lastname{}},
     pdftitle      = {\@firstname{}~\@lastname{}\notblank{\@title}{ -- \@title}{}},
-    pdfsubject    = {R\'{e}sum\'{e} of \@firstname{}~\@lastname{}},
-    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}, r\'{e}sum\'{e}}}}
+    pdfsubject    = {Curriculum Vit\ae{} of \@firstname{}~\@lastname{}},
+    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}}}}
 
 % graphics
 \RequirePackage{graphicx}
