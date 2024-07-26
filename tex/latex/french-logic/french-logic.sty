@@ -38,9 +38,49 @@
 \RequirePackage{trimclip,adjustbox}
 
 
-% Logic Packages
+% EB Proof --  with style
 \RequirePackage{ebproof}
-\RequirePackage{tikz} % Settings for possible worlds models, taken from http://www.actual.world/resources/tex/doc/TikZ.pdf
+    \newenvironment{gentzen}{\begin{prooftree}}{\end{prooftree}}
+    \newcommand*{\hyphantom}{\hypo{{$\hphantom{--}$}}}
+    \newcommand{\hyp}[1]{\hypo{#1}}
+    \newcommand{\infr}[4]{\infer[#1]#2[#3]{#4}}
+    \renewcommand{\inf}[3]{\infer#1[#2]{#3}}
+    \newcommand{\irulej}[1]{$\scriptscriptstyle[#1 I]$}
+    \newcommand{\iruledj}[2]{$\scriptscriptstyle[#1 I]_{#2}$}
+    \newcommand{\erulej}[1]{$\scriptscriptstyle[#1 E]$}
+    \newcommand{\eruledj}[2]{$\scriptscriptstyle[#1 E]_{#2}$}
+    \newcommand{\negiprule}[1]{$\scriptscriptstyle{[\neg I^P]_{#1}}$}
+    \newcommand{\negipstarrule}[1]{$\scriptscriptstyle{[\neg I^{P^\ast}]_{#1}}$}
+    \newcommand{\negedrule}{$\scriptscriptstyle{[\neg E^\dagger]}$}
+    \newcommand{\negidrule}[1]{$\scriptscriptstyle{[\neg I^\dagger]_{#1}}$}
+    \newcommand{\manrule}[2]{$\scriptscriptstyle{[#1]_{#2}}$}
+    % ripped from W2021 seminar final preamble, much is superfluous
+    \newcommand*{\incomp}{\dagger}
+    \newcommand*{\close}[1]{$\scriptscriptstyle{#1}$}
+    \newcommand*{\hk}{{\supset}}
+    \newcommand{\affirm}[1]{{\mathlarger{\mathlarger{+}}\;{#1}}}
+    \newcommand{\deny}[1]{\mathlarger{\mathlarger{-}}\;{#1}}
+    \newcommand{\aff}{\mathlarger{\mathlarger{+}}}
+    \newcommand{\den}{\mathlarger{\mathlarger{-}}}
+    \newcommand{\af}{{\mathlarger{+}}}
+    \newcommand{\de}{{\mathlarger{-}}}
+    \newcommand{\afland}{\af\!\land}
+    \newcommand{\deland}{\de\!\land}
+    \newcommand{\aflor}{\af\!\lor}
+    \newcommand{\delor}{\de\!\lor}
+    \newcommand{\afto}{\af\rightarrow}
+    \newcommand{\deto}{\de\rightarrow}
+    \newcommand{\afneg}{\af\neg}
+    \newcommand{\deneg}{\de\neg}
+    \newcommand{\ecu}{\Rightarrow}
+    \newcommand{\ito}{\rightarrow_i}
+    \newcommand{\cto}{\rightarrow_c}
+    \newcommand{\ilor}{\lor_i}
+    \newcommand{\clor}{\lor_c}
+
+
+% Settings for possible worlds models, taken from http://www.actual.world/resources/tex/doc/TikZ.pdf
+\RequirePackage{tikz} 
     \usetikzlibrary{arrows,calc,patterns,positioning,shapes}
     \tikzset{
         modal/.style={>=stealth’,shorten >=1pt,shorten <=1pt,auto,node distance=1.5cm,semithick},
