@@ -181,7 +181,8 @@
 \newcommand{\gives}{\vdash}
 \newcommand{\asserts}{\vdash}
 \newcommand{\proves}{\vdash}
-\newcommand{\seq}{\:\Yright\:}
+\newcommand{\seq}{\;\Yright\;}
+\newcommand{\tseq}{\Yright\;}
 \newcommand{\modelsrel}[1]{\models_{\!\mathscr{#1}}}
 \newcommand{\provesrel}[1]{\proves_{\!\mathscr{#1}}}
 
@@ -191,7 +192,7 @@
 \newcommand{\poss}{{\Diamond}}
 \newcommand{\M}{\mathfrak{M}}
 \newcommand{\F}{\mathfrak{F}}
-\newcommand{\C}{\textbf{C}}
+\newcommand{\C}{\mathfrak{C}}
 \newcommand{\R}{\mathcal{R}}
 \newcommand{\mwrv}{\M=\oset{W,R,V}}
 \newcommand{\mwrp}{\M=\oset{W,R,P}}
@@ -237,6 +238,8 @@
 \newcommand{\cought}[2]{\ought(#1/#2)}
 \newcommand{\better}[2]{\mathsf{{B}}(#1/#2)}
 \newcommand{\samevas}[2]{\mathsf{{S}}(#1/#2)}
+
+% Dyadic Stuff
 \newcommand{\condop}[1]{{
     {\mbox{$\mkern3.5mu$}}
     {\mathrel{\raisebox{.87pt}{\scalebox{1}{\rotatebox[origin=c]{0}{$\shortmid$}}}}}
@@ -246,9 +249,10 @@
     {\mathrel{\raisebox{.5pt}{\scalebox{.75}{\rotatebox[origin=c]{0}{$\mathsf{#1}$}}}}}
     {\mbox{$\mkern2.75mu$}}
 }}
-\newcommand{\cobs}{{\condop{O}}}
-\newcommand{\cperms}{{\condop{P}}}
-\newcommand{\cbevs}{{\condop{B}}}
+\newcommand{\cobs}{\Rightarrow}
+%\newcommand{\cobs}{{\condop{O}}} % THIS IS THE STYLIZED COMMAND
+%\newcommand{\cperms}{{\condop{P}}}
+%\newcommand{\cbevs}{{\condop{B}}}
 %\newcommand{\cobs}{{\mbox{$\mkern4.3mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\supset$}}}}\mbox{$\mkern-15.25mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\multimap$}}}}}}\mbox{$\mkern2.25mu$}}}
 %\newcommand{\cobvar}{{{}{\mkern3.3mu{{\mathrel{\raisebox{1.45pt}{\scalebox{.65}{$\bigcirc$}}}}{\mkern-6mu}{{\mathrel{\raisebox{1pt}{\scalebox{.75}{$\Rightarrow$}}}}}}{}\mkern1.85mu}{}}}
 \newcommand{\sphere}{\mathbf{\mathdollar}}
