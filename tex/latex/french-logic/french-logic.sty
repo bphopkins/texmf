@@ -10,7 +10,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{lmodern}
 \RequirePackage[english]{babel}
-\RequirePackage{biblatex}
+\RequirePackage[backend=biber]{biblatex}
 \RequirePackage{csquotes}
 %\RequirePackage{circledsteps}
 \RequirePackage{ragged2e}
@@ -249,9 +249,9 @@
     {\mathrel{\raisebox{.5pt}{\scalebox{.75}{\rotatebox[origin=c]{0}{$\mathsf{#1}$}}}}}
     {\mbox{$\mkern2.75mu$}}
 }}
-\newcommand{\cobs}{\Rightarrow}
-%\newcommand{\cobs}{{\condop{O}}} % THIS IS THE STYLIZED COMMAND
-%\newcommand{\cperms}{{\condop{P}}}
+%\newcommand{\cobs}{\Rightarrow}
+\newcommand{\cobs}{{\condop{O}}} % THIS IS THE STYLIZED COMMAND
+\newcommand{\cperms}{{\condop{P}}}
 %\newcommand{\cbevs}{{\condop{B}}}
 %\newcommand{\cobs}{{\mbox{$\mkern4.3mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\supset$}}}}\mbox{$\mkern-15.25mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\multimap$}}}}}}\mbox{$\mkern2.25mu$}}}
 %\newcommand{\cobvar}{{{}{\mkern3.3mu{{\mathrel{\raisebox{1.45pt}{\scalebox{.65}{$\bigcirc$}}}}{\mkern-6mu}{{\mathrel{\raisebox{1pt}{\scalebox{.75}{$\Rightarrow$}}}}}}{}\mkern1.85mu}{}}}
