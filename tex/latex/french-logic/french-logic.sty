@@ -116,7 +116,7 @@
     \newtheorem{defn}{Definition}[section]
     \newtheorem{thm}{Theorem}[section]
     \newtheorem*{thms}{Some Theorems}
-    \newtheorem*{rmrk}{Remark}%[section]
+    \newtheorem{rmrk}{Remark}[section]
     \newtheorem*{anal}{Analysis}
     \newtheorem{proposal}{Proposal}
 
@@ -276,37 +276,67 @@
 
 
 % Modal Axioms
-\newcommand{\kax}{\parent{\textsc{k}}}
-\newcommand{\dax}{\parent{\textsc{d}}}
-\newcommand{\tax}{\parent{\textsc{t}}}
-\newcommand{\uax}{\parent{\textsc{u}}}
-\newcommand{\maxi}{\parent{\textsc{m}}}
-\newcommand{\cax}{\parent{\textsc{c}}}
-\newcommand{\nax}{\parent{\textsc{n}}}
-\newcommand{\duax}{{\parent{\textsc{dual}}}}
+\newcommand{\kax}{{\textsc{k}}}
+\newcommand{\dax}{{\textsc{d}}}
+\newcommand{\tax}{{\textsc{t}}}
+\newcommand{\uax}{{\textsc{u}}}
+\newcommand{\maxi}{{\textsc{m}}}
+\newcommand{\cax}{{\textsc{c}}}
+\newcommand{\nax}{{\textsc{n}}}
+\newcommand{\duax}{{{\textsc{dual}}}}
+% Parenthesized
+\newcommand{\kaxpar}{\parent{\textsc{k}}}
+\newcommand{\daxpar}{\parent{\textsc{d}}}
+\newcommand{\taxpar}{\parent{\textsc{t}}}
+\newcommand{\uaxpar}{\parent{\textsc{u}}}
+\newcommand{\maxipar}{\parent{\textsc{m}}}
+\newcommand{\caxpar}{\parent{\textsc{c}}}
+\newcommand{\naxpar}{\parent{\textsc{n}}}
+\newcommand{\duaxpar}{{\parent{\textsc{dual}}}}
 
 
 % Modal Derivation Rules
-\newcommand{\krule}{\parent{k}}
-\newcommand{\rerule}{\parent{\textsc{re}}}
-\newcommand{\relrule}{\parent{\textsc{re}$_{\textnormal{\tiny L}}$}}
-\newcommand{\rerrule}{\parent{\textsc{re}$_{\textnormal{\tiny R}}$}}
-\newcommand{\porule}{\parent{\textsc{p}$_\ought$}}
-\newcommand{\posrule}{\parent{\textsc{p}$_\ought^\ast$}}
-\newcommand{\drule}{{\parent{\textsc{dual}}}}
-\newcommand{\nrule}{{\parent{\textsc{nec}}}}
-\newcommand{\mprule}{{\parent{\textsc{mp}}}}
-\newcommand{\plrule}{{\parent{\textsc{pl}}}}
-\newcommand{\rkrule}{\parent{{\textsc{rk}}}}
-\newcommand{\reprule}{{\parent{\textsc{repl}}}}
-\newcommand{\tautrule}{{\parent{\textsc{taut}}}}
-\newcommand{\subrule}{{\parent{\textsc{sub}}}}
-\newcommand{\rmposs}{{\parent{\textsc{rm}$_\poss$}}}
-\newcommand{\reposs}{\parent{{\textsc{re}}$_\poss$}}
-\newcommand{\rposs}{{\parent{\textsc{r}}$_\poss$}}
-\newcommand{\Trule}{\parent{t}}
-\newcommand{\Tdual}{\parent{t$_\poss$}}
-\newcommand{\dfnec}{\parent{{\textsc{df}}$_\nec$}}
+\newcommand{\krule}{{k}}
+\newcommand{\rerule}{{\textsc{re}}}
+\newcommand{\relrule}{{\textsc{re}$_{\textnormal{\tiny L}}$}}
+\newcommand{\rerrule}{{\textsc{re}$_{\textnormal{\tiny R}}$}}
+\newcommand{\porule}{{\textsc{p}$_\ought$}}
+\newcommand{\posrule}{{\textsc{p}$_\ought^\ast$}}
+\newcommand{\drule}{{{\textsc{dual}}}}
+\newcommand{\nrule}{{{\textsc{nec}}}}
+\newcommand{\mprule}{{{\textsc{mp}}}}
+\newcommand{\plrule}{{{\textsc{pl}}}}
+\newcommand{\rkrule}{{{\textsc{rk}}}}
+\newcommand{\reprule}{{{\textsc{repl}}}}
+\newcommand{\tautrule}{{{\textsc{taut}}}}
+\newcommand{\subrule}{{{\textsc{sub}}}}
+\newcommand{\rmposs}{{{\textsc{rm}$_\poss$}}}
+\newcommand{\reposs}{{{\textsc{re}}$_\poss$}}
+\newcommand{\rposs}{{{\textsc{r}}$_\poss$}}
+\newcommand{\Trule}{{t}}
+\newcommand{\Tdual}{{t$_\poss$}}
+\newcommand{\dfnec}{{{\textsc{df}}$_\nec$}}
+% Parenthesized
+\newcommand{\krulepar}{\parent{k}}
+\newcommand{\rerulepar}{\parent{\textsc{re}}}
+\newcommand{\relrulepar}{\parent{\textsc{re}$_{\textnormal{\tiny L}}$}}
+\newcommand{\rerrulepar}{\parent{\textsc{re}$_{\textnormal{\tiny R}}$}}
+\newcommand{\porulepar}{\parent{\textsc{p}$_\ought$}}
+\newcommand{\posrulepar}{\parent{\textsc{p}$_\ought^\ast$}}
+\newcommand{\drulepar}{{\parent{\textsc{dual}}}}
+\newcommand{\nrulepar}{{\parent{\textsc{nec}}}}
+\newcommand{\mprulepar}{{\parent{\textsc{mp}}}}
+\newcommand{\plrulepar}{{\parent{\textsc{pl}}}}
+\newcommand{\rkrulepar}{\parent{{\textsc{rk}}}}
+\newcommand{\reprulepar}{{\parent{\textsc{repl}}}}
+\newcommand{\tautrulepar}{{\parent{\textsc{taut}}}}
+\newcommand{\subrulepar}{{\parent{\textsc{sub}}}}
+\newcommand{\rmposspar}{{\parent{\textsc{rm}$_\poss$}}}
+\newcommand{\reposspar}{\parent{{\textsc{re}}$_\poss$}}
+\newcommand{\rposspar}{{\parent{\textsc{r}}$_\poss$}}
+\newcommand{\Trulepar}{\parent{t}}
+\newcommand{\Tdualpar}{\parent{t$_\poss$}}
+\newcommand{\dfnecpar}{\parent{{\textsc{df}}$_\nec$}}
 
 
 % Modal Systems and Schema
@@ -322,6 +352,7 @@
 \newcommand{\Kfour}{\textbf{K4}}
 \newcommand{\Kfive}{\textbf{K5}}
 \newcommand{\KDU}{\textbf{KDU}}
+\newcommand{\KU}{\textbf{KU}}
 \newcommand{\E}{\textbf{E}}
 \newcommand{\EM}{\textbf{EM}}
 \newcommand{\EN}{\textbf{EN}}
@@ -333,6 +364,7 @@
 \newcommand{\COc}{\textnormal{CO$_\textnormal{{\kern-.1em}\scriptsize C}$}}
 \newcommand{\COvf}[1]{\textnormal{CO$_{\textnormal{{\kern-.1em}\scriptsize vF}_{{\kern-.1em}\textnormal{\tiny #1}}}$}}
 \newcommand{\SDL}{\textnormal{SDL}}
+\newcommand{\SDLplus}{\textnormal{SDL}$^+$}
 
 
 % Proof Stuff
