@@ -167,9 +167,11 @@
 \newcommand{\truthsetm}[1]{\dvbar #1\dvbar^{\mbox{$\mkern-2mu$\scriptsize$\M$}}}
 \newcommand{\truthsetmsub}[2]{\dvbar #1\dvbar_{\mbox{$\mkern-2mu$\scriptsize$#2$}}^{\mbox{$\mkern-2mu$\scriptsize$\M$}}}
 \newcommand{\truthsetmm}[1]{\dvbar #1\dvbar_{\mbox{$\mkern-2mu$\scriptsize$m$}}^{\mbox{$\mkern-2mu$\scriptsize$\M$}}}
-\newcommand{\defby}{\:=_\textnormal{def}\:}
+\newcommand{\defby}{\,\mathrel{\raisebox{.25pt}{\mbox{:$\mkern-1.5mu$:}}\mbox{$\mkern-1.5mu$=}}\,}
+\newcommand{\defbyvar}{\:=_\textnormal{def}\:}
 \newcommand{\prop}[1]{{p}_{\scriptscriptstyle{#1}}}
 \newcommand{\props}{{\mathcal{P}}}
+\newcommand{\emptytruthset}{\truthset{\!\cdot\!}}
 
 
 % Logical Operators and Relations
@@ -191,7 +193,11 @@
 \newcommand{\nec}{\Box}
 \newcommand{\poss}{{\Diamond}}
 \newcommand{\M}{\mathfrak{M}}
+\newcommand{\MR}{\mathfrak{M}_R}
+\newcommand{\MN}{\mathfrak{M}_N}
 \newcommand{\F}{\mathfrak{F}}
+\newcommand{\FR}{\mathfrak{F}_R}
+\newcommand{\FN}{\mathfrak{F}_N}
 \newcommand{\C}{\mathfrak{C}}
 \newcommand{\R}{\mathcal{R}}
 \newcommand{\mwrv}{\M=\oset{W,R,V}}
@@ -276,59 +282,69 @@
 
 
 % Modal Axioms
-\newcommand{\kax}{{\textsc{K}}}
-\newcommand{\dax}{{\textsc{D}}}
-\newcommand{\tax}{{\textsc{T}}}
-\newcommand{\uax}{{\textsc{U}}}
-\newcommand{\maxi}{{\textsc{M}}}
-\newcommand{\cax}{{\textsc{C}}}
-\newcommand{\nax}{{\textsc{N}}}
-\newcommand{\duax}{{{\textsc{Dual}}}}
+\newcommand{\kax}{{\textnormal{K}}}
+\newcommand{\dax}{{\textnormal{D}}}
+\newcommand{\tax}{{\textnormal{T}}}
+\newcommand{\uax}{{\textnormal{U}}}
+\newcommand{\wax}{{\textnormal{W}}}
+\newcommand{\maxi}{{\textnormal{M}}}
+\newcommand{\cax}{{\textnormal{C}}}
+\newcommand{\nax}{{\textnormal{N}}}
+\newcommand{\duax}{{{\textnormal{Dual}}}}
 % Parenthesized
-\newcommand{\kaxpar}{\parent{\textsc{K}}}
-\newcommand{\daxpar}{\parent{\textsc{D}}}
-\newcommand{\taxpar}{\parent{\textsc{T}}}
-\newcommand{\uaxpar}{\parent{\textsc{U}}}
-\newcommand{\maxipar}{\parent{\textsc{M}}}
-\newcommand{\caxpar}{\parent{\textsc{C}}}
-\newcommand{\naxpar}{\parent{\textsc{N}}}
-\newcommand{\duaxpar}{{\parent{\textsc{Dual}}}}
+\newcommand{\kaxpar}{\parent{\textnormal{K}}}
+\newcommand{\daxpar}{\parent{\textnormal{D}}}
+\newcommand{\taxpar}{\parent{\textnormal{T}}}
+\newcommand{\uaxpar}{\parent{\textnormal{U}}}
+\newcommand{\maxipar}{\parent{\textnormal{M}}}
+\newcommand{\caxpar}{\parent{\textnormal{C}}}
+\newcommand{\naxpar}{\parent{\textnormal{N}}}
+\newcommand{\duaxpar}{{\parent{\textnormal{Dual}}}}
+% Converses
+\newcommand{\kaxc}{{\textnormal{K}$_c$}}
+\newcommand{\daxc}{{\textnormal{D}$_c$}}
+\newcommand{\taxc}{{\textnormal{T}$_c$}}
+\newcommand{\uaxc}{{\textnormal{U}$_c$}}
+\newcommand{\waxc}{{\textnormal{W}\!$_c$}}
+\newcommand{\maxic}{{\textnormal{M}$_c$}}
+\newcommand{\caxc}{{\textnormal{C}$_c$}}
+\newcommand{\naxc}{{\textnormal{N}$_c$}}
 
 
 % Modal Derivation Rules
-\newcommand{\rerule}{{\textsc{RE}}}
-\newcommand{\relrule}{{\textsc{RE}$_{\textnormal{\tiny L}}$}}
-\newcommand{\rerrule}{{\textsc{RE}$_{\textnormal{\tiny R}}$}}
-\newcommand{\porule}{{\textsc{P}$_\ought$}}
-\newcommand{\posrule}{{\textsc{P}$_\ought^\ast$}}
-\newcommand{\drule}{{{\textsc{Dual}}}}
-\newcommand{\nrule}{{{\textsc{Nec}}}}
-\newcommand{\mprule}{{{\textsc{MP}}}}
-\newcommand{\plrule}{{{\textsc{PL}}}}
-\newcommand{\krule}{{{\textsc{RK}}}}
-\newcommand{\reprule}{{{\textsc{Repl}}}}
-\newcommand{\tautrule}{{{\textsc{Taut}}}}
-\newcommand{\subrule}{{{\textsc{Sub}}}}
-\newcommand{\rmposs}{{{\textsc{RM}$_\poss$}}}
-\newcommand{\reposs}{{{\textsc{RE}}$_\poss$}}
-\newcommand{\rposs}{{{\textsc{R}}$_\poss$}}
+\newcommand{\rerule}{{\textnormal{RE}}}
+\newcommand{\relrule}{{\textnormal{RE}$_{\textnormal{\tiny L}}$}}
+\newcommand{\rerrule}{{\textnormal{RE}$_{\textnormal{\tiny R}}$}}
+\newcommand{\porule}{{\textnormal{P}$_\ought$}}
+\newcommand{\posrule}{{\textnormal{P}$_\ought^\ast$}}
+\newcommand{\drule}{{{\textnormal{Dual}}}}
+\newcommand{\nrule}{{{\textnormal{Nec}}}}
+\newcommand{\mprule}{{{\textnormal{MP}}}}
+\newcommand{\plrule}{{{\textnormal{PL}}}}
+\newcommand{\krule}{{{\textnormal{RK}}}}
+\newcommand{\reprule}{{{\textnormal{Repl}}}}
+\newcommand{\tautrule}{{{\textnormal{Taut}}}}
+\newcommand{\subrule}{{{\textnormal{Sub}}}}
+\newcommand{\rmposs}{{{\textnormal{RM}$_\poss$}}}
+\newcommand{\reposs}{{{\textnormal{RE}}$_\poss$}}
+\newcommand{\rposs}{{{\textnormal{R}}$_\poss$}}
 % Parenthesized
-\newcommand{\rerulepar}{\parent{\textsc{RE}}}
-\newcommand{\relrulepar}{\parent{\textsc{RE}$_{\textnormal{\tiny L}}$}}
-\newcommand{\rerrulepar}{\parent{\textsc{RE}$_{\textnormal{\tiny R}}$}}
-\newcommand{\porulepar}{\parent{\textsc{P}$_\ought$}}
-\newcommand{\posrulepar}{\parent{\textsc{P}$_\ought^\ast$}}
-\newcommand{\drulepar}{{\parent{\textsc{Dual}}}}
-\newcommand{\nrulepar}{{\parent{\textsc{Nec}}}}
-\newcommand{\mprulepar}{{\parent{\textsc{MP}}}}
-\newcommand{\plrulepar}{{\parent{\textsc{PL}}}}
-\newcommand{\krulepar}{\parent{{\textsc{RK}}}}
-\newcommand{\reprulepar}{{\parent{\textsc{Repl}}}}
-\newcommand{\tautrulepar}{{\parent{\textsc{Taut}}}}
-\newcommand{\subrulepar}{{\parent{\textsc{Sub}}}}
-\newcommand{\rmposspar}{{\parent{\textsc{RM}$_\poss$}}}
-\newcommand{\reposspar}{\parent{{\textsc{RE}}$_\poss$}}
-\newcommand{\rposspar}{{\parent{\textsc{R}}$_\poss$}}
+\newcommand{\rerulepar}{\parent{\textnormal{RE}}}
+\newcommand{\relrulepar}{\parent{\textnormal{RE}$_{\textnormal{\tiny L}}$}}
+\newcommand{\rerrulepar}{\parent{\textnormal{RE}$_{\textnormal{\tiny R}}$}}
+\newcommand{\porulepar}{\parent{\textnormal{P}$_\ought$}}
+\newcommand{\posrulepar}{\parent{\textnormal{P}$_\ought^\ast$}}
+\newcommand{\drulepar}{{\parent{\textnormal{Dual}}}}
+\newcommand{\nrulepar}{{\parent{\textnormal{Nec}}}}
+\newcommand{\mprulepar}{{\parent{\textnormal{MP}}}}
+\newcommand{\plrulepar}{{\parent{\textnormal{PL}}}}
+\newcommand{\krulepar}{\parent{{\textnormal{RK}}}}
+\newcommand{\reprulepar}{{\parent{\textnormal{Repl}}}}
+\newcommand{\tautrulepar}{{\parent{\textnormal{Taut}}}}
+\newcommand{\subrulepar}{{\parent{\textnormal{Sub}}}}
+\newcommand{\rmposspar}{{\parent{\textnormal{RM}$_\poss$}}}
+\newcommand{\reposspar}{\parent{{\textnormal{RE}}$_\poss$}}
+\newcommand{\rposspar}{{\parent{\textnormal{R}}$_\poss$}}
 
 
 
@@ -346,6 +362,10 @@
 \newcommand{\Kfive}{\textbf{K5}}
 \newcommand{\KDU}{\textbf{KDU}}
 \newcommand{\KU}{\textbf{KU}}
+\newcommand{\KW}{\textbf{KW}}
+\newcommand{\KDW}{\textbf{KDW}}
+\newcommand{\KUW}{\textbf{KUW}}
+\newcommand{\KDUW}{\textbf{KDUW}}
 \newcommand{\E}{\textbf{E}}
 \newcommand{\EM}{\textbf{EM}}
 \newcommand{\EN}{\textbf{EN}}
@@ -356,9 +376,17 @@
 \newcommand{\VW}{\textbf{VW}}
 \newcommand{\COc}{\textnormal{CO$_\textnormal{{\kern-.1em}\scriptsize C}$}}
 \newcommand{\COvf}[1]{\textnormal{CO$_{\textnormal{{\kern-.1em}\scriptsize vF}_{{\kern-.1em}\textnormal{\tiny #1}}}$}}
+% Deontic Systems (and stuff)
 \newcommand{\SDL}{\textnormal{SDL}}
 \newcommand{\SDLplus}{\textnormal{SDL}$^+$}
-
+\newcommand{\subought}{$_\ought$}
+\newcommand{\KDought}{\textbf{KD}\subought}
+\newcommand{\KDUought}{\textbf{KDU}\subought}
+\newcommand{\KUought}{\textbf{KU}\subought}
+\newcommand{\KWought}{\textbf{KW}\subought}
+\newcommand{\KDWought}{\textbf{KDW}\subought}
+\newcommand{\KUWought}{\textbf{KUW}\subought}
+\newcommand{\KDUWought}{\textbf{KDUW}\subought}
 
 % Proof Stuff
 \renewcommand{\qed}{\hfill$\blacksquare$}
