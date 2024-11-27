@@ -118,8 +118,11 @@
     \newtheorem*{thms}{Some Theorems}
     \newtheorem{rmrk}{Remark}[section]
     \newtheorem*{anal}{Analysis}
+    \newtheorem*{note}{Note}
     \newtheorem{proposal}{Proposal}
     \newtheorem{example}{Example}[section]
+    \newtheorem*{digression}{\textbf{\textit{Digression.}}}
+        \AtEndEnvironment{digression}{\textbf{\textit{End of digression.}}}
 
 
 % Misc Preliminary
@@ -132,6 +135,8 @@
 
 % Misc Mathematical
 \newcommand{\fn}{{f_{{\mkern-3.6mu\scriptscriptstyle N}}}}
+\newcommand{\fm}{{f_{{\mkern-3.6mu\scriptscriptstyle M}}}}
+\newcommand{\fd}{{f_{{\mkern-3.6mu\scriptscriptstyle D}}}}
 \newcommand{\fs}{{f_{{\mkern-3mu\scriptscriptstyle S}}}}
 \newcommand{\fr}{{f_{{\mkern-3.6mu\scriptscriptstyle R}}}}
 \newcommand{\fsub}[1]{{f_{{\mkern-3.5mu\scriptscriptstyle #1}}}}
@@ -194,11 +199,15 @@
 \newcommand{\nec}{\Box}
 \newcommand{\poss}{{\Diamond}}
 \newcommand{\M}{\mathfrak{M}}
-\newcommand{\MR}{\mathfrak{M}_R}
-\newcommand{\MN}{\mathfrak{M}_N}
 \newcommand{\F}{\mathfrak{F}}
-\newcommand{\FR}{\mathfrak{F}_R}
-\newcommand{\FN}{\mathfrak{F}_N}
+\newcommand{\FR}{\mathfrak{F}_{\!\scriptscriptstyle R}}
+\newcommand{\FN}{\mathfrak{F}_{\!\scriptscriptstyle N}}
+\newcommand{\FNo}{\mathfrak{F}_{\!\scriptscriptstyle N}^{\scriptscriptstyle 1}}
+\newcommand{\FNt}{\mathfrak{F}_{\!\scriptscriptstyle N}^{\scriptscriptstyle 2}}
+\newcommand{\MR}{\mathfrak{M}_{\!\scriptscriptstyle R}}
+\newcommand{\MN}{\mathfrak{M}_{\!\scriptscriptstyle N}}
+\newcommand{\MNo}{\mathfrak{M}_{\!\scriptscriptstyle N}^{\scriptscriptstyle 1}}
+\newcommand{\MNt}{\mathfrak{M}_{\!\scriptscriptstyle N}^{\scriptscriptstyle 2}}
 \newcommand{\C}{\mathfrak{C}}
 \newcommand{\R}{\mathcal{R}}
 \newcommand{\mwrv}{\M=\oset{W,R,V}}
@@ -370,6 +379,8 @@
 \newcommand{\KDUW}{\textbf{KDUW}}
 \newcommand{\E}{\textbf{E}}
 \newcommand{\EM}{\textbf{EM}}
+\newcommand{\EMD}{\textbf{EMD}}
+\newcommand{\EMP}{\textbf{EMP}}
 \newcommand{\EN}{\textbf{EN}}
 \newcommand{\EC}{\textbf{EC}}
 \newcommand{\EMN}{\textbf{EMN}}
