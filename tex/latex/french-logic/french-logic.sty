@@ -152,6 +152,19 @@
 %\renewcommand{\null}{\emptyset}
 \newcommand{\intersect}{\cap}
 \newcommand{\union}{\cup}
+\newcommand{\suchthat}{\colon}
+
+
+% Misc Syntactical
+\newcommand{\Fm}{\textnormal{Fm}}
+\newcommand{\lang}{\mathcal{L}}
+\newcommand{\langp}{\lang^\textnormal{\tiny P}}
+\newcommand{\langm}{\lang^\textnormal{\tiny M}}
+\newcommand{\langd}{\lang^\textnormal{\tiny D}}
+\newcommand{\langmd}{\lang^\textnormal{\tiny MD}}
+\newcommand{\logic}{\mathscr{L}}
+\newcommand{\logicp}{\logic_{\!\textnormal{\tiny p}}}
+\newcommand{\Lc}{\mathscr{L}^{\textnormal{\tiny C}}}
 
 
 % Semantic Notions and Relations
@@ -329,6 +342,32 @@
 \newcommand{\caxc}{{\textnormal{C}$_c$}}
 \newcommand{\naxc}{{\textnormal{N}$_c$}}
 
+% Conditional Axioms and Conditions on Frames
+\newcommand{\CMr}{CM$_{\textnormal{\tiny R}}$}
+\newcommand{\CMl}{CM$_{\textnormal{\tiny L}}$}
+\newcommand{\CCr}{CC$_{\textnormal{\tiny R}}$}
+\newcommand{\CCl}{CC$_{\textnormal{\tiny L}}$}
+\newcommand{\CMrs}{CM$_{\textnormal{\tiny R}}^*$}
+\newcommand{\CMls}{CM$_{\textnormal{\tiny L}}^*$}
+\newcommand{\CCrs}{CC$_{\textnormal{\tiny R}}^*$}
+\newcommand{\CCls}{CC$_{\textnormal{\tiny L}}^*$}
+\newcommand{\CNr}{CN$_{\textnormal{\tiny R}}$}
+\newcommand{\CNl}{CN$_{\textnormal{\tiny L}}$}
+\newcommand{\CNlr}{CN$_{\textnormal{\tiny LR}}$}
+\newcommand{\CTh}{CT$^{\textnormal{\tiny H}}$}
+\newcommand{\cmr}{cm$_{\textnormal{\tiny R}}$}
+\newcommand{\cml}{cm$_{\textnormal{\tiny L}}$}
+\newcommand{\ccr}{cc$_{\textnormal{\tiny R}}$}
+\newcommand{\ccl}{cc$_{\textnormal{\tiny L}}$}
+\newcommand{\cmrs}{cm$_{\textnormal{\tiny R}}^*$}
+\newcommand{\cmls}{cm$_{\textnormal{\tiny L}}^*$}
+\newcommand{\ccrs}{cc$_{\textnormal{\tiny R}}^*$}
+\newcommand{\ccls}{cc$_{\textnormal{\tiny L}}^*$}
+\newcommand{\cnr}{cn$_{\textnormal{\tiny R}}$}
+\newcommand{\cnl}{cn$_{\textnormal{\tiny L}}$}
+\newcommand{\cnlr}{cn$_{\textnormal{\tiny LR}}$}
+\newcommand{\cth}{ct$^{\textnormal{\tiny H}}$}
+
 
 % Modal Derivation Rules
 \newcommand{\rerule}{{\textnormal{RE}}}
@@ -419,13 +458,48 @@
 \newcommand{\KDWought}{\textbf{KDW}\subought}
 \newcommand{\KUWought}{\textbf{KUW}\subought}
 \newcommand{\KDUWought}{\textbf{KDUW}\subought}
+\newcommand{\SDLt}{\textnormal{SDL\!\textsuperscript{T}}}
+
+
+
+% Misc I/O Stuff
+\newcommand*{\IO}{\text{I/O}}
+\newcommand{\IOs}{$\textbf{IO}^*$}
+\newcommand{\IOsn}[1]{$\textbf{IO}^*_{#1}$}
+\newcommand{\IOh}{$\textbf{IO}^\textnormal{\tiny H}$}
+\newcommand{\IOhn}[1]{$\textbf{IO}^\textnormal{\tiny H}_{#1}$}
+\newcommand{\iput}[1]{\textnormal{in}(#1)}
+\newcommand{\oput}[1]{\textnormal{out}(#1)}
+\newcommand{\oputi}[2]{\textnormal{out}_{#1}(#2)}
+\newcommand{\deriv}[1]{\textnormal{deriv}(#1)}
+\newcommand{\derivi}[2]{\textnormal{deriv}_{#1}(#2)}
+\newcommand{\Ts}{$\top^*$}
+\newcommand{\SIs}{$\textnormal{SI}^*$}
+\newcommand{\WOs}{$\textnormal{WO}^*$}
+\newcommand{\ANDs}{$\textnormal{AND}^*$}
+\newcommand{\ORs}{$\textnormal{OR}^*$}
+\newcommand{\CTs}{$\textnormal{CT}^*$}
 
 % Proof Stuff
 \renewcommand{\qed}{\hfill$\blacksquare$}
-
 \newcommand{\setset}{\textls*[-30]{\textsc{Set-Set}}}
 \newcommand{\fmlaset}{\textls*[-30]{\textsc{Fmla-Set}}}
 \newcommand{\fmlafmla}{\textls*[-30]{\textsc{Fmla-Fmla}}}
+\newcommand{\provesm}{\proves_{\!\!\textnormal{\tiny M}}}
+\newcommand{\provestf}{\proves_{\!\!\textnormal{\tiny TF}}}
+\newcommand{\infer}{\; // \;}
+
+
+% List Environments
+\newenvironment{hilbertlist}{\begin{itemize}[topsep=8pt,noitemsep,labelsep=1.5em,leftmargin=2cm]}{\end{itemize}}
+\newenvironment{romanlist}{\begin{enumerate}[label=(\roman*),topsep=8pt,noitemsep,leftmargin=1.25cm]}{\end{enumerate}}
+\newenvironment{Romanlist}{\begin{enumerate}[label=(\Roman*),topsep=8pt,noitemsep,leftmargin=1.25cm]}{\end{enumerate}}
+\newenvironment{arablist}{\begin{enumerate}[label={\arabic*.},topsep=8pt,noitemsep,leftmargin=1.25cm]}{\end{enumerate}}
+\newenvironment{arablistpar}{\begin{enumerate}[label=(\arabic*),topsep=8pt,noitemsep,leftmargin=1.25cm]}{\end{enumerate}}
+\newenvironment{alphlistpar}{\begin{enumerate}[label=(\alph*),topsep=8pt,noitemsep,leftmargin=1.25cm]}{\end{enumerate}}
+\newenvironment{Alphlist}{\begin{enumerate}[label={\Alph*.},topsep=8pt,noitemsep,leftmargin=1.25cm]}{\end{enumerate}}
+\newenvironment{itemlist}{\begin{itemize}[topsep=8pt,noitemsep,leftmargin=1.25cm]}{\end{itemize}}
+
 
 
 % Misc Other Technical (unsorted)
