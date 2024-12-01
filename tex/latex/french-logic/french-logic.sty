@@ -109,7 +109,7 @@
 
 % amsthm
 \renewcommand\qedsymbol{$\blacksquare$}
-
+\newcommand{\sketchqed}{\hfill $\square$}
 
 % amsmath
 \theoremstyle{definition}
@@ -123,6 +123,21 @@
     \newtheorem{example}{Example}[section]
     \newtheorem*{digression}{\textbf{\textit{Digression}}}
         \AtEndEnvironment{digression}{\textbf{\textit{End of digression.}}}
+
+\newtheoremstyle{sketchstyle}%
+  {}{}             % Space above and below
+  {}               % Body font (normal text)
+  {}               % Indentation (none)
+  {\itshape}       % Heading font (italic)
+  {.}              % Punctuation after heading
+  {1ex}              % Space after heading
+  {}               % Custom head spec (empty)
+\theoremstyle{sketchstyle}
+    \newtheorem*{proofsketch}{Sketch of Proof}
+    \AtEndEnvironment{proofsketch}{\sketchqed}
+
+
+
 
 
 % Misc Preliminary
@@ -445,11 +460,12 @@
 \newcommand{\CK}{\textbf{CK}}
 \newcommand{\CKD}{\textbf{CKD}}
 \newcommand{\VW}{\textbf{VW}}
-\newcommand{\COc}{\textnormal{CO$_\textnormal{{\kern-.1em}\scriptsize C}$}}
-\newcommand{\COvf}[1]{\textnormal{CO$_{\textnormal{{\kern-.1em}\scriptsize vF}_{{\kern-.1em}\textnormal{\tiny #1}}}$}}
+\newcommand{\Slog}{\textbf{S}}
+
 % Deontic Systems (and stuff)
 \newcommand{\SDL}{\textnormal{SDL}}
 \newcommand{\SDLplus}{\textnormal{SDL}$^+$}
+\newcommand{\SDLt}{\textnormal{SDL\!\textsuperscript{T}}}
 \newcommand{\subought}{$_\ought$}
 \newcommand{\KDought}{\textbf{KD}\subought}
 \newcommand{\KDUought}{\textbf{KDU}\subought}
@@ -458,7 +474,9 @@
 \newcommand{\KDWought}{\textbf{KDW}\subought}
 \newcommand{\KUWought}{\textbf{KUW}\subought}
 \newcommand{\KDUWought}{\textbf{KDUW}\subought}
-\newcommand{\SDLt}{\textnormal{SDL\!\textsuperscript{T}}}
+\newcommand{\COc}{\textnormal{CO$_\textnormal{{\kern-.1em}\scriptsize C}$}}
+\newcommand{\COvf}[1]{\textnormal{CO$_{\textnormal{{\kern-.1em}\scriptsize vF}_{{\kern-.1em}\textnormal{\tiny #1}}}$}}
+
 
 
 
@@ -483,6 +501,7 @@
 % Proof Stuff
 \renewcommand{\qed}{\hfill$\blacksquare$}
 \newcommand{\setset}{\textls*[-30]{\textsc{Set-Set}}}
+\newcommand{\setfmla}{\textls*[-30]{\textsc{Set-Fmla}}}
 \newcommand{\fmlaset}{\textls*[-30]{\textsc{Fmla-Set}}}
 \newcommand{\fmlafmla}{\textls*[-30]{\textsc{Fmla-Fmla}}}
 \newcommand{\provesm}{\proves_{\!\!\textnormal{\tiny M}}}
