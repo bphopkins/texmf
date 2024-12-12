@@ -2,7 +2,7 @@
 
 I have decided to share some custom LaTeX macros with the world, as well as some clean [instructions](#instructions) for getting global LaTeX macro files set up locally on Unix-like machines.  It's kind of an annoying setup, but it can be worth it.
 
-These days ChatGPT can give you cleaner instructions, and answers to more questions, but when I was figuring this out I could not find **simple** instructions that worked **every time** anywhere.  These have worked for me every time.
+These days AI can probably give you instructions, and answers to more questions, but when I was figuring this out I could not find **simple** instructions that worked **every time** anywhere.  These have worked for me every time.
 
 
 ### Why would you want to make use of these instructions?
@@ -18,9 +18,11 @@ This is where these instructions come in handy: they give you a way to have your
 
 ## Instructions
 
-These instructions are generalizable to different locations -- for example, if you want to make it the location of a cloned GitHub repository. 
+These instructions are generalizable to different locations -- for example, if you want to make it the location of a cloned GitHub repository.  Below I provide the instructions on Linux machines; the procedure is similar on both Windows and Mac, but probably some of the locations are different.
 
-1. Create a folder called `texmf` where you would like your custom macro files to be stored (mine is in the home directory of my USB stick). **The location of this folder cannot be changed without having to go through these steps again.** 
+1. Preliminary: Make sure you have TeXlive or equivalent installed. Standard installation.
+
+2. Create a folder called `texmf` where you would like your custom macro files to be stored. At one point mine was in the home directory of my USB stick, but now it's just on my desktop; your home directory is another common location. **The location of this folder cannot be changed without having to go through these steps again.** 
     - Inside `texmf`, create a folder called `tex`.
     - Inside `tex`, create a folder called `latex`.
     - Inside `latex`, create a folder for each of your macros, which has the same exact name as the primary file that will go in each folder, i.e., the exact name of the macro you intend to invoke in your preambles.
@@ -36,21 +38,22 @@ These instructions are generalizable to different locations -- for example, if y
                     tufte-common.def
             ```
 
-
-2. Find where your texmf.cnf file is. For example, you might search for "TEXMFHOME" in your filesystem:
+3. Find where your `texmf.cnf` file is. For example, you might search for "TEXMFHOME" in your filesystem:
     ```
     sudo find / -type f -exec grep -H 'TEXMFHOME' {} \;
     ```
     Running this command may take some time! In both Fedora and Ubuntu (Pop) it's at: 
     `/usr/share/texlive/texmf-dist/web2c/texmf.cnf`
     
-    You might rather search for the `texmf.cnf` file, but as I recall not all systems (maybe I have Windows or Mac in mind) have the TEXMFHOME location information stored in a file with this name.
+    On Windows and Mac, you'll have to search system-wide for your `texmf.cnf` file.
 
-3. In your preferred editor, search for the line that contains `TEXMFHOME` (circa line 84) and change the default location `~/texmf` to your desired location (you might need to be root):
+4. In your preferred editor, search for the line that contains `TEXMFHOME` (circa line 84 on Linux) and change the default location `~/texmf` to your desired location (you might need to be root):
     - Ubuntu (Pop):  `/media/bph/bph-work/texmf`
 	- Fedora:  `/run/media/bph/bph-work/texmf`
+    
+    **Save the changes.**
 
-4. Update hash:
+5. Update the hash:
 	- Ubuntu:  
         ```
         texhash /media/bph/bph-work/texmf
@@ -61,8 +64,13 @@ These instructions are generalizable to different locations -- for example, if y
         ```
     This will create a file inside the `texmf` folder called `ls-R` which directs the compiler to your custom macros.
 
-And now you are set!
+And now you are set!  Just include your custom style in the preamble of your document (don't include the file extension), and any commands it includes will work:
+```
+\documentclass{article}
+\usepackage{logic}
+\begin{document}
+```
 
 ### A Little Piece of Advice
 
-Some say that you only need to update the hash when you modify the structure of the `texmf` directory, and not when you simply update one of the files.  I've had inconsistent results; I seem to remember occasionally updating a file and getting errors until I update the hash.  At any rate, although I do not always adhere to the following rule, you probably can't go wrong adhering to it:  **Every time you update one of your macros, update the hash!**
+If ever everything seems configured properly but your document isn't compiling, returning errors related to the style files, of course look for typos in the style file, but you might also try updating the hash.
