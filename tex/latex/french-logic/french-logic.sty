@@ -52,7 +52,7 @@
     \newcommand{\erulej}[1]{$\scriptscriptstyle[#1 E]$}
     \newcommand{\eruledj}[2]{$\scriptscriptstyle[#1 E]_{#2}$}
     \newcommand{\negiprule}[1]{$\scriptscriptstyle{[\neg I^P]_{#1}}$}
-    \newcommand{\negipstarrule}[1]{$\scriptscriptstyle{[\neg I^{P^\ast}]_{#1}}$}
+    \newcommand{\negipstarrule}[1]{$\scriptscriptstyle{[\neg I^{P^*}]_{#1}}$}
     \newcommand{\negedrule}{$\scriptscriptstyle{[\neg E^\dagger]}$}
     \newcommand{\negidrule}[1]{$\scriptscriptstyle{[\neg I^\dagger]_{#1}}$}
     \newcommand{\manrule}[2]{$\scriptscriptstyle{[#1]_{#2}}$}
@@ -324,64 +324,70 @@
 
 
 % Modal Axioms
-\newcommand{\kax}{{\textnormal{K}}}
-\newcommand{\dax}{{\textnormal{D}}}
-\newcommand{\tax}{{\textnormal{T}}}
-\newcommand{\uax}{{\textnormal{U}}}
-\newcommand{\wax}{{\textnormal{W}}}
-\newcommand{\maxi}{{\textnormal{M}}}
-\newcommand{\cax}{{\textnormal{C}}}
-\newcommand{\nax}{{\textnormal{N}}}
-\newcommand{\cmaxi}{{\textnormal{CM}}}
-\newcommand{\ccax}{{\textnormal{CC}}}
-\newcommand{\cnax}{{\textnormal{CN}}}
-\newcommand{\duax}{{{\textnormal{Dual}}}}
-\newcommand{\poax}{{\textnormal{P}$_\ought$}}
-\newcommand{\posax}{{\textnormal{P}$_\ought^\ast$}}
+\newcommand{\kax}{{\textbf{K}}}
+\newcommand{\dax}{{\textbf{D}}}
+\newcommand{\dsax}{{\textbf{D}$^*$}}
+\newcommand{\tax}{{\textbf{T}}}
+\newcommand{\uax}{{\textbf{U}}}
+\newcommand{\wax}{{\textbf{W}}}
+\newcommand{\maxi}{{\textbf{M}}}
+\newcommand{\cax}{{\textbf{C}}}
+\newcommand{\nax}{{\textbf{N}}}
+\newcommand{\cmaxi}{{\textbf{CM}}}
+\newcommand{\ccax}{{\textbf{CC}}}
+\newcommand{\cnax}{{\textbf{CN}}}
+\newcommand{\duax}{{{\textbf{Dual}}}}
+\newcommand{\pax}{{\textbf{P}}}
+\newcommand{\psax}{{\textbf{P}$^*$}}
+\newcommand{\poax}{{\textbf{P}$_{\!\ought}$}}
+\newcommand{\posax}{{\textbf{P}$_{\!\ought}^*$}}
+\newcommand{\woax}{\textbf{W}\!$_\ought$}
+\newcommand{\wocax}{\textbf{W}\!$_{\ought\textnormal{c}}$}
 % Parenthesized
-\newcommand{\kaxpar}{\parent{\textnormal{K}}}
-\newcommand{\daxpar}{\parent{\textnormal{D}}}
-\newcommand{\taxpar}{\parent{\textnormal{T}}}
-\newcommand{\uaxpar}{\parent{\textnormal{U}}}
-\newcommand{\maxipar}{\parent{\textnormal{M}}}
-\newcommand{\caxpar}{\parent{\textnormal{C}}}
-\newcommand{\naxpar}{\parent{\textnormal{N}}}
-\newcommand{\duaxpar}{{\parent{\textnormal{Dual}}}}
+\newcommand{\kaxpar}{\parent{\textbf{K}}}
+\newcommand{\daxpar}{\parent{\textbf{D}}}
+\newcommand{\taxpar}{\parent{\textbf{T}}}
+\newcommand{\uaxpar}{\parent{\textbf{U}}}
+\newcommand{\maxipar}{\parent{\textbf{M}}}
+\newcommand{\caxpar}{\parent{\textbf{C}}}
+\newcommand{\naxpar}{\parent{\textbf{N}}}
+\newcommand{\duaxpar}{{\parent{\textbf{Dual}}}}
 % Converses
-\newcommand{\kaxc}{{\textnormal{K}$_c$}}
-\newcommand{\daxc}{{\textnormal{D}$_c$}}
-\newcommand{\taxc}{{\textnormal{T}$_c$}}
-\newcommand{\uaxc}{{\textnormal{U}$_c$}}
-\newcommand{\waxc}{{\textnormal{W}\!$_c$}}
-\newcommand{\maxic}{{\textnormal{M}$_c$}}
-\newcommand{\caxc}{{\textnormal{C}$_c$}}
-\newcommand{\naxc}{{\textnormal{N}$_c$}}
+\newcommand{\kaxc}{{\textbf{K}$_c$}}
+\newcommand{\daxc}{{\textbf{D}$_c$}}
+\newcommand{\taxc}{{\textbf{T}$_c$}}
+\newcommand{\uaxc}{{\textbf{U}$_c$}}
+\newcommand{\waxc}{{\textbf{W}\!$_c$}}
+\newcommand{\maxic}{{\textbf{M}$_c$}}
+\newcommand{\caxc}{{\textbf{C}$_c$}}
+\newcommand{\naxc}{{\textbf{N}$_c$}}
 
 % Conditional Axioms and Conditions on Frames
-\newcommand{\CMr}{CM$_{\textnormal{\tiny R}}$}
-\newcommand{\CMl}{CM$_{\textnormal{\tiny L}}$}
-\newcommand{\CCr}{CC$_{\textnormal{\tiny R}}$}
-\newcommand{\CCl}{CC$_{\textnormal{\tiny L}}$}
-\newcommand{\CMrs}{CM$_{\textnormal{\tiny R}}^*$}
-\newcommand{\CMls}{CM$_{\textnormal{\tiny L}}^*$}
-\newcommand{\CCrs}{CC$_{\textnormal{\tiny R}}^*$}
-\newcommand{\CCls}{CC$_{\textnormal{\tiny L}}^*$}
-\newcommand{\CNr}{CN$_{\textnormal{\tiny R}}$}
-\newcommand{\CNl}{CN$_{\textnormal{\tiny L}}$}
-\newcommand{\CNlr}{CN$_{\textnormal{\tiny LR}}$}
-\newcommand{\CTh}{CT$^{\textnormal{\tiny H}}$}
-\newcommand{\cmr}{cm$_{\textnormal{\tiny R}}$}
-\newcommand{\cml}{cm$_{\textnormal{\tiny L}}$}
-\newcommand{\ccr}{cc$_{\textnormal{\tiny R}}$}
-\newcommand{\ccl}{cc$_{\textnormal{\tiny L}}$}
-\newcommand{\cmrs}{cm$_{\textnormal{\tiny R}}^*$}
-\newcommand{\cmls}{cm$_{\textnormal{\tiny L}}^*$}
-\newcommand{\ccrs}{cc$_{\textnormal{\tiny R}}^*$}
-\newcommand{\ccls}{cc$_{\textnormal{\tiny L}}^*$}
-\newcommand{\cnr}{cn$_{\textnormal{\tiny R}}$}
-\newcommand{\cnl}{cn$_{\textnormal{\tiny L}}$}
-\newcommand{\cnlr}{cn$_{\textnormal{\tiny LR}}$}
-\newcommand{\cth}{ct$^{\textnormal{\tiny H}}$}
+\newcommand{\CMr}{\textbf{CM}$_{\textnormal{\tiny R}}$}
+\newcommand{\CMl}{\textbf{CM}$_{\textnormal{\tiny L}}$}
+\newcommand{\CCr}{\textbf{CC}$_{\textnormal{\tiny R}}$}
+\newcommand{\CCl}{\textbf{CC}$_{\textnormal{\tiny L}}$}
+\newcommand{\CMrs}{\textbf{CM}$_{\textnormal{\tiny R}}^*$}
+\newcommand{\CMls}{\textbf{CM}$_{\textnormal{\tiny L}}^*$}
+\newcommand{\CCrs}{\textbf{CC}$_{\textnormal{\tiny R}}^*$}
+\newcommand{\CCls}{\textbf{CC}$_{\textnormal{\tiny L}}^*$}
+\newcommand{\CNr}{\textbf{CN}$_{\textnormal{\tiny R}}$}
+\newcommand{\CNl}{\textbf{CN}$_{\textnormal{\tiny L}}$}
+\newcommand{\CNlr}{\textbf{CN}$_{\textnormal{\tiny LR}}$}
+\newcommand{\cdax}{\textbf{CD}}
+\newcommand{\CTh}{\textbf{CT}$^{\textnormal{\tiny H}}$}
+\newcommand{\cmr}{{cm}$_{\textnormal{\tiny R}}$}
+\newcommand{\cml}{{cm}$_{\textnormal{\tiny L}}$}
+\newcommand{\ccr}{{cc}$_{\textnormal{\tiny R}}$}
+\newcommand{\ccl}{{cc}$_{\textnormal{\tiny L}}$}
+\newcommand{\cmrs}{{cm}$_{\textnormal{\tiny R}}^*$}
+\newcommand{\cmls}{{cm}$_{\textnormal{\tiny L}}^*$}
+\newcommand{\ccrs}{{cc}$_{\textnormal{\tiny R}}^*$}
+\newcommand{\ccls}{{cc}$_{\textnormal{\tiny L}}^*$}
+\newcommand{\cnr}{{cn}$_{\textnormal{\tiny R}}$}
+\newcommand{\cnl}{{cn}$_{\textnormal{\tiny L}}$}
+\newcommand{\cnlr}{{cn}$_{\textnormal{\tiny LR}}$}
+\newcommand{\cth}{{ct}$^{\textnormal{\tiny H}}$}
 
 
 % Modal Derivation Rules
@@ -389,7 +395,7 @@
 \newcommand{\relrule}{{\textnormal{RE}$_{\textnormal{\tiny L}}$}}
 \newcommand{\rerrule}{{\textnormal{RE}$_{\textnormal{\tiny R}}$}}
 \newcommand{\porule}{{\textnormal{P}$_\ought$}}
-\newcommand{\posrule}{{\textnormal{P}$_\ought^\ast$}}
+\newcommand{\posrule}{{\textnormal{P}$_\ought^*$}}
 \newcommand{\drule}{{{\textnormal{Dual}}}}
 \newcommand{\nrule}{{{\textnormal{Nec}}}}
 \newcommand{\mprule}{{{\textnormal{MP}}}}
@@ -406,7 +412,7 @@
 \newcommand{\relrulepar}{\parent{\textnormal{RE}$_{\textnormal{\tiny L}}$}}
 \newcommand{\rerrulepar}{\parent{\textnormal{RE}$_{\textnormal{\tiny R}}$}}
 \newcommand{\porulepar}{\parent{\textnormal{P}$_\ought$}}
-\newcommand{\posrulepar}{\parent{\textnormal{P}$_\ought^\ast$}}
+\newcommand{\posrulepar}{\parent{\textnormal{P}$_\ought^*$}}
 \newcommand{\drulepar}{{\parent{\textnormal{Dual}}}}
 \newcommand{\nrulepar}{{\parent{\textnormal{Nec}}}}
 \newcommand{\mprulepar}{{\parent{\textnormal{MP}}}}
@@ -433,6 +439,8 @@
 \newcommand{\KB}{\textbf{KB}}
 \newcommand{\Kfour}{\textbf{K4}}
 \newcommand{\Kfive}{\textbf{K5}}
+\newcommand{\Kfourfive}{\textbf{K45}}
+\newcommand{\KDfourfive}{\textbf{KD45}}
 \newcommand{\KDU}{\textbf{KDU}}
 \newcommand{\KU}{\textbf{KU}}
 \newcommand{\KW}{\textbf{KW}}
