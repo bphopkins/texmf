@@ -121,8 +121,7 @@
     \newtheorem*{note}{Note}
     \newtheorem{proposal}{Proposal}
     \newtheorem{example}{Example}[section]
-    \newtheorem*{digression}{\textbf{\textit{Digression}}}
-        \AtEndEnvironment{digression}{\textbf{\textit{End of digression.}}}
+  
 
 \newtheoremstyle{sketchstyle}%
   {}{}             % Space above and below
@@ -133,9 +132,10 @@
   {1ex}              % Space after heading
   {}               % Custom head spec (empty)
 \theoremstyle{sketchstyle}
-    \newtheorem*{proofsketch}{Sketch of Proof}
+  \newtheorem*{proofsketch}{Sketch of Proof}
     \AtEndEnvironment{proofsketch}{\sketchqed}
-
+  \newtheorem*{digression}{{{Digression}}}
+    \AtEndEnvironment{digression}{{\textit{End of digression.}}}
 
 
 
@@ -374,6 +374,7 @@
 \newcommand{\CNr}{\textbf{CN}$_{\textnormal{\tiny R}}$}
 \newcommand{\CNl}{\textbf{CN}$_{\textnormal{\tiny L}}$}
 \newcommand{\CNlr}{\textbf{CN}$_{\textnormal{\tiny LR}}$}
+\newcommand{\CNra}{\textbf{CN}$_{\textnormal{\tiny R}}^{\textnormal{\tiny A}}$}
 \newcommand{\cdax}{\textbf{CD}}
 \newcommand{\CTh}{\textbf{CT}$^{\textnormal{\tiny H}}$}
 \newcommand{\cmr}{{cm}$_{\textnormal{\tiny R}}$}
