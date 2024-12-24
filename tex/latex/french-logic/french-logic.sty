@@ -137,6 +137,7 @@
     \AtEndEnvironment{proofsketch}{\sketchqed}
   \newtheorem*{digression}{{{Digression}}}
     \AtEndEnvironment{digression}{{\textit{End of digression.}}}
+  \newtheorem*{elucidation}{{{Elucidation}}}
 
 
 
@@ -169,6 +170,7 @@
 \newcommand{\intersect}{\cap}
 \newcommand{\union}{\cup}
 \newcommand{\suchthat}{\colon}
+\renewcommand{\st}{\textnormal{ s.t. }}
 
 
 % Misc Syntactical
@@ -297,9 +299,17 @@
     {\mathrel{\raisebox{.5pt}{\scalebox{.75}{\rotatebox[origin=c]{0}{$\mathsf{#1}$}}}}}
     {\mbox{$\mkern2.75mu$}}
 }}
+\newcommand{\condopsolo}[1]{{
+    {\mathrel{\raisebox{.87pt}{\scalebox{1}{\rotatebox[origin=c]{0}{$\shortmid$}}}}}
+    {\mbox{$\mkern-5mu$}}
+    {\mathrel{\raisebox{.45pt}{\scalebox{1}{\rotatebox[origin=c]{90}{$\shortmid\mkern-1.1mu\shortmid$}}}}}
+    {\mbox{$\mkern-2.7mu$}}
+    {\mathrel{\raisebox{.5pt}{\scalebox{.75}{\rotatebox[origin=c]{0}{$\mathsf{#1}$}}}}}
+}}
 %\newcommand{\cobs}{\Rightarrow}
 \newcommand{\cobs}{{\condop{O}}} % THIS IS THE STYLIZED COMMAND
 \newcommand{\cperms}{{\condop{P}}}
+\newcommand{\cobsolo}{\condopsolo{O}}
 %\newcommand{\cbevs}{{\condop{B}}}
 %\newcommand{\cobs}{{\mbox{$\mkern4.3mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\supset$}}}}\mbox{$\mkern-15.25mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\multimap$}}}}}}\mbox{$\mkern2.25mu$}}}
 %\newcommand{\cobs}{{{}{\mkern3.3mu{{\mathrel{\raisebox{1.45pt}{\scalebox{.65}{$\bigcirc$}}}}{\mkern-6mu}{{\mathrel{\raisebox{1pt}{\scalebox{.75}{$\Rightarrow$}}}}}}{}\mkern1.85mu}{}}}
