@@ -1,5 +1,6 @@
 
 \RequirePackage[hyperfootnotes=false]{hyperref}
+\RequirePackage[backend=biber]{biblatex}
 
 
 % Conflicting definitions from french-logic.sty
