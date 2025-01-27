@@ -1,21 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{french-logic}[Enhanced logic macros]
 
-% Define the conflicts option
-\RequirePackage{kvoptions}
-\SetupKeyvalOptions{
-  family=frenchlogic,
-  prefix=french@logic@
-}
-\DeclareBoolOption[false]{conflicts}
-\ProcessKeyvalOptions*
 
-% Conditionally load conflicts.def
-\iffrench@logic@conflicts
-  % Do nothing if conflicts=true
-\else
-  \input{conflicts.def}
-\fi
 
 %%% PACKAGES %%%
 
@@ -35,6 +21,23 @@
 \RequirePackage{multicol}
 \RequirePackage{xcolor, soul}
 \RequirePackage{tabularx}
+
+
+% Define the conflicts option
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{
+  family=frenchlogic,
+  prefix=french@logic@
+}
+\DeclareBoolOption[false]{conflicts}
+\ProcessKeyvalOptions*
+
+% Conditionally load conflicts.def
+\iffrench@logic@conflicts
+  % Do nothing if conflicts=true
+\else
+  \input{conflicts.def}
+\fi
 
 
 
@@ -298,7 +301,8 @@
 %\newcommand{\cobs}{{\mbox{$\mkern4.3mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\supset$}}}}\mbox{$\mkern-15.25mu$}{{\mathrel{\raisebox{.65pt}{\scalebox{.95}{$\multimap$}}}}}}\mbox{$\mkern2.25mu$}}}
 %\newcommand{\cobs}{{{}{\mkern3.3mu{{\mathrel{\raisebox{1.45pt}{\scalebox{.65}{$\bigcirc$}}}}{\mkern-6mu}{{\mathrel{\raisebox{1pt}{\scalebox{.75}{$\Rightarrow$}}}}}}{}\mkern1.85mu}{}}}
 \newcommand{\sphere}{\mathbf{\mathdollar}}
-\newcommand{\cfact}{\Box \mkern-8mu \mathrel{\raisebox{.5pt}{$\Rightarrow$}}}
+\newcommand{\cfact}{\Box \mkern-8mu \mathrel{\raisebox{.6pt}{$\Rightarrow$}}}
+
 
 
 % STIT

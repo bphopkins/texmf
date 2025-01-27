@@ -14,6 +14,7 @@
 
 \renewcommand\qedsymbol{$\blacksquare$}
 \newcommand{\sketchqed}{\hfill $\square$}
+\newcommand{\remarkqed}{\hfill \mbox{$\triangleleft$}}
 
 
 % amsmath
@@ -31,8 +32,8 @@
 
 % For Dissertation
 \newtheoremstyle{noindentplain}     % Name
-    {4pt}                        % Space above
-    {4pt}                        % Space below
+    {6pt}                        % Space above
+    {6pt}                        % Space below
     {\normalfont}                       % Body font (italic)
     {0pt}                            % Indent amount
     {\scshape}                      % Theorem head font
@@ -41,8 +42,8 @@
     {}                              % Theorem head spec
 
 \newtheoremstyle{noindentdefinition} % Name
-    {4pt}                        % Space above
-    {4pt}                        % Space below
+    {6pt}                        % Space above
+    {6pt}                        % Space below
     {\normalfont}                    % Body font (normal)
     {0pt}                            % Indent amount
     {\scshape}                      % Theorem head font
@@ -51,8 +52,8 @@
     {}                              % Theorem head spec
 
 \newtheoremstyle{noindentremark}     % Name
-    {4pt}                        % Space above
-    {4pt}                        % Space below
+    {6pt}                        % Space above
+    {6pt}                        % Space below
     {\normalfont}                    % Body font (normal)
     {0pt}                            % Indent amount
     {\itshape}                       % Theorem head font
@@ -69,16 +70,23 @@
 \theoremstyle{noindentdefinition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
-\newtheorem{convention}[theorem]{Convention}
+
 
 \theoremstyle{noindentremark}
 \newtheorem{remark}[theorem]{Remark}
+\AtEndEnvironment{remark}{\remarkqed}
 \newtheorem{note}[theorem]{Note}
+\AtEndEnvironment{note}{\remarkqed}
 \newtheorem{observation}[theorem]{Observation}
+\AtEndEnvironment{observation}{\remarkqed}
+\newtheorem{convention}[theorem]{Convention}
+\AtEndEnvironment{convention}{\remarkqed}
+
+
   
 \newtheoremstyle{sketchstyle}%
-  {4pt}
-  {4pt}             % Space above and below
+  {6pt}
+  {6pt}             % Space above and below
   {\normalfont}               % Body font (normal text)
   {0pt}               % Indentation (none)
   {\itshape}       % Heading font (italic)
