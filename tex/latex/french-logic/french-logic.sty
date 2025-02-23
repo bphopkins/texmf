@@ -14,7 +14,7 @@
 %\RequirePackage{circledsteps}
 \RequirePackage{ragged2e}
 \RequirePackage{setspace}
-\RequirePackage{footmisc}
+%\RequirePackage{footmisc}
 %\RequirePackage{enotez}
 \RequirePackage{graphicx}
     \graphicspath{{./images/}}
@@ -193,7 +193,7 @@
 \newcommand{\truthsetmm}[1]{\dvbar #1\dvbar_{\mbox{$\mkern-2mu$\scriptsize$m$}}^{\mbox{$\mkern-2mu$\scriptsize$\M$}}}
 \newcommand{\defby}{\,\mathrel{\raisebox{.25pt}{\mbox{:$\mkern-1.5mu$:}}\mbox{$\mkern-1.5mu$=}}\,}
 \newcommand{\defbyvar}{\:=_\textnormal{def}\:}
-\newcommand{\prop}[1]{{p}_{\scriptscriptstyle{#1}}}
+%\newcommand{\prop}[1]{{p}_{\scriptscriptstyle{#1}}} % Conflict?
 \newcommand{\props}{{\mathcal{P}}}
 \newcommand{\emptytruthset}{\truthset{\!\cdot\!}}
 
@@ -559,7 +559,7 @@
 \newcommand{\minus}{{\sim}}
 \newcommand{\ent}{{\:\:^\vdash\!\!/\!_\vDash\:}}
 \newcommand{\cn}[1]{\textnormal{Cn}(#1)}
-\newcommand{\prob}[1]{\textbf{P}(#1)}
+%\newcommand{\prob}[1]{\textbf{P}(#1)} DEON conflict?
 \newcommand{\cprob}[2]{\textbf{P}({{#1} \mid {#2}})}
 \newcommand{\cred}[1]{\textbf{C}(#1)}
 \newcommand{\ccred}[2]{\textbf{C}({{#1} \mid {#2}})}
