@@ -2,10 +2,11 @@
 \RequirePackage[hyperfootnotes=false]{hyperref}
 \RequirePackage[backend=biber]{biblatex}
 
+\RequirePackage{footmisc}
+
 
 % Conflicting definitions from french-logic.sty
 \RequirePackage{amsthm}
-\RequirePackage{amsmath}
 
 %%% THEOREM ENVIRONMENTS AND RELATED DEFINITIONS %%%
 
