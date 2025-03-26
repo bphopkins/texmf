@@ -10,6 +10,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{lmodern}
 \RequirePackage[english]{babel}
+\RequirePackage[backend=biber]{biblatex}
 \RequirePackage{csquotes}
 %\RequirePackage{circledsteps}
 \RequirePackage{ragged2e}
@@ -49,6 +50,7 @@
 % Math Packages
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
+\RequirePackage{amsthm}
 \RequirePackage{mathtools}
 \RequirePackage{stmaryrd}
 \RequirePackage{mathrsfs}
@@ -586,11 +588,7 @@
 \newcommand{\abreak}{\\[-10pt]}
 
 
-\newenvironment{block}
-  {\begin{list}{}{\setlength{\leftmargin}{2em} % Set left margin
-                  \setlength{\rightmargin}{0em}} % Set right margin to 0
-   \item[]}
-  {\end{list}}
+
 
 
 

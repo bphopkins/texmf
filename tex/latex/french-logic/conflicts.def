@@ -1,6 +1,5 @@
 
 \RequirePackage[hyperfootnotes=false]{hyperref}
-\RequirePackage[backend=biber]{biblatex}
 
 \RequirePackage{footmisc}
 
@@ -114,3 +113,12 @@
   \popQED\endtrivlist\@endpefalse
 }
 \makeatother
+
+
+
+
+\newenvironment{block}
+  {\begin{list}{}{\setlength{\leftmargin}{2em} % Set left margin
+                  \setlength{\rightmargin}{0em}} % Set right margin to 0
+   \item[]}
+  {\end{list}}
