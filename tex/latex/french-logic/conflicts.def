@@ -3,6 +3,8 @@
 
 \RequirePackage{footmisc}
 
+\RequirePackage{enumitem}
+
 
 % Conflicting definitions from french-logic.sty
 \RequirePackage{amsthm}
