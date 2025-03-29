@@ -163,9 +163,9 @@
 % Misc Syntactical
 \newcommand{\Fm}{\textnormal{Fm}}
 \newcommand{\lang}{\ensuremath{\mathcal{L}}}
-\newcommand{\langp}{\ensuremath{\mathcal{L}^{\textnormal{\scriptsize P}}}}
-\newcommand{\langm}{\ensuremath{\mathcal{L}^{\textnormal{\scriptsize M}}}}
-\newcommand{\langd}{\ensuremath{\mathcal{L}^{\textnormal{\scriptsize D}}}}
+\newcommand{\langp}{\ensuremath{\mathcal{L}^{\textnormal{\tiny P}}}}
+\newcommand{\langm}{\ensuremath{\mathcal{L}^{\textnormal{\tiny M}}}}
+\newcommand{\langd}{\ensuremath{\mathcal{L}^{\textnormal{\tiny D}}}}
 \newcommand{\langmd}{\lang^\textnormal{\tiny MD}}
 \newcommand{\logic}{\mathscr{L}}
 \newcommand{\logicp}{\logic_{\!\textnormal{\tiny p}}}
@@ -506,9 +506,12 @@
 \newcommand*{\IO}{\textup{\text{I/O}}}
 \newcommand{\IOs}{$\textup{\textbf{IO}}^*$}
 \newcommand{\IOsn}[1]{$\textup{\textbf{IO}}^*_{#1}$}
-\newcommand{\IOn}[1]{$\textup{\textbf{IO}}_{#1}$}
-\newcommand{\IOh}{$\textup{\textbf{IO}}^\textnormal{\tiny H}$}
-\newcommand{\IOhn}[1]{$\textup{\textbf{IO}}^\textnormal{\tiny H}_{#1}$}
+\newcommand{\IOn}[1]{\ensuremath{\textup{\textbf{IO}}_{#1}}}
+\newcommand{\IOh}{\ensuremath{\textup{\textbf{IO}}^\text{\tiny H}}}
+\newcommand{\IOhn}[1]{\ensuremath{\textup{\textbf{IO}}^\text{\tiny H}_{#1}}}
+% \newcommand{\IOn}[1]{$\textup{\textbf{IO}}_{#1}$}
+% \newcommand{\IOh}{$\textup{\textbf{IO}}^\text{\tiny H}$}
+% \newcommand{\IOhn}[1]{$\textup{\textbf{IO}}^\text{\tiny H}_{#1}$}
 \newcommand{\iput}[1]{\textnormal{in}(#1)}
 \newcommand{\oput}[1]{\textnormal{out}(#1)}
 \newcommand{\oputi}[2]{\textnormal{out}_{#1}(#2)}
@@ -601,7 +604,8 @@
 \newcommand{\mcseti}[2]{|#2|_{#1}}
 \newcommand{\tightwedge}{\mathbin{\mkern-4mu\wedge\mkern-4mu}}
 \newcommand{\atoms}{\textsf{At}}
-\newcommand{\IOfn}[1]{$\textup{\textsf{IO}}^\textsf{\tiny H}_{#1}$}
+%\newcommand{\IOfn}[1]{$\textup{\textsf{IO}}^\textsf{\tiny H}_{#1}$}
+\newcommand{\IOfn}[1]{$\textup{\textsf{IO}}^{\tiny\textsf{H}}_{#1}$}
 
 
 
